@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "types": [
+      "vuetify"
+    ],
+    "baseUrl": "./resources/ts",
+    "paths": {
+      "@src/*": [
+        "*"
+      ],
+      "@store/*": [
+        "store/*"
+      ],
+      "@views/*": [
+        "views/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@core/*": [
+        "core/*"
+      ],
+      "@modules/*": [
+        "store/modules/*"
+      ],
+    }
+  },
+  "typeRoots": [
+    "./node_modules/@types"
+  ],
+  "include": [
+    "resources/ts/*.ts",
+    "resources/ts/**/*.ts"
+    // "resources/ts/store/*.ts",
+    // "resources/ts/store/**/*.ts",
+    // "resources/ts/myresources/strings.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "vendor"
+  ]
+}

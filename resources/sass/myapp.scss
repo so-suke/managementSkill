@@ -1,0 +1,20 @@
+// resets
+// ------------------------------------
+@import "./resets/resets";
+
+// variables
+// ------------------------------------
+@import "./variables/variables";
+
+// layouts
+// ------------------------------------
+@import "./layouts/notifications";
+
+// components
+// ------------------------------------
+@import "./components/buttons";
+
+// @import "./variables/element-variables";
+// @import "./variables/fa-variables";
+@import "~vuetify/dist/vuetify.min.css";
+@import "~material-design-icons-iconfont/dist/material-design-icons.css";

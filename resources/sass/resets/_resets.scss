@@ -1,0 +1,42 @@
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+button {
+  cursor: pointer;
+  border: 0px;
+  background-color: #fff;
+}
+
+select {
+  appearance: none;
+  background: #fff;
+}

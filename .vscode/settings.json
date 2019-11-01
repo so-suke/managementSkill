@@ -1,0 +1,14 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#380586",
+    "titleBar.activeBackground": "#4E06BB",
+    "titleBar.activeForeground": "#FDFCFF"
+  },
+  "eslint.validate": [
+    "javascript",
+    {
+      "autoFix": true,
+      "language": "vue"
+    }
+  ],
+}
