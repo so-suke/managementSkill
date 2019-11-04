@@ -18,3 +18,40 @@ store スナックバーの表示を管理変数を作成
   コントローラー
     全社員返す
       with役職
+
+@タイトル
+フロント(vue)
+  ルーティング
+  処理
+バック(laravel)
+  ルーティング
+  Controller
+
+@プロフィール更新
+フロント(vue)
+  ルーティング
+  処理
+    元データを表示する。
+    全て入力する、スクリプトで。
+    更新確定→更新確認
+      プロフィール画面へ遷移
+バック(laravel)
+  ルーティング
+  Controller
+
+@個人詳細(idから詳細情報取得)
+  id毎に情報を表示したい
+フロント(vue)
+  ルーティング
+  処理
+    ・更新は開いている者か、管理者のみ
+    mountedでやる
+      axiosでidを飛ばす(api/employees/{this.$route.params.id})
+      ①から、employee変数に格納して、それを表示
+バック(laravel)
+  ルーティング
+    api/employees/1(api/employees/{employee_id})
+  Controller
+    渡って来たidを使用して、社員取得
+    情報を返す①へ
+

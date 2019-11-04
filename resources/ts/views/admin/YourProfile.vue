@@ -15,7 +15,7 @@
         </v-card-text>
         <v-col cols="12" class="text-right">
           <v-btn
-            :to="{ name: 'Your Profile Update'}"
+            :to="{ name: 'Employee Profile Update'}"
             class="justify-self-end"
             color="success"
           >プロフィール更新</v-btn>

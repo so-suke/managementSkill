@@ -87,14 +87,15 @@ export default class CoreDrawer extends Vue {
 
   links: any = [
     {
-      to: { name: "Your Profile" },
-      // to: "/",
+      to: {
+        name: "Employee Profile",
+        params: { id: this.$store.state.authenticationModule.user.id }
+      },
       icon: "mdi-format-font",
       text: "Your Profile"
     },
     {
       to: { name: "Employee List" },
-      // to: "/employee-list",
       icon: "mdi-view-dashboard",
       text: "Employee List"
     },

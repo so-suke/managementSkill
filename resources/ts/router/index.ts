@@ -40,16 +40,13 @@ const router = new Router({
       component: (resovle: any) => import(
         `@src/views/admin/AdminWrapper.vue`
       ).then(resovle),
-      redirect: { name: "Your Profile" },
+      redirect: { name: "Employee Profile", params: { id: store.state.authenticationModule.user.id } },
       meta: { requiresAuth: true },
       children: [
         {
           path: "your-profile",
           name: "Your Profile",
-          component: (resovle: any) => import(
-            `@src/views/admin/YourProfile.vue`
-          ).then(resovle),
-          meta: { requiresAuth: true },
+          redirect: { name: "Employee Profile", params: { id: store.state.authenticationModule.user.id } },
         },
         {
           path: "employee-list",
@@ -59,6 +56,31 @@ const router = new Router({
           ).then(resovle),
           meta: { requiresAuth: true },
         },
+        {
+          path: "employee-profile/:id",
+          component: (resovle: any) => import(
+            `@src/views/admin/employeeProfile/wrapper.vue`
+          ).then(resovle),
+          meta: { requiresAuth: true },
+          children: [
+            {
+              path: "",
+              name: "Employee Profile",
+              component: (resovle: any) => import(
+                `@src/views/admin/employeeProfile/index.vue`
+              ).then(resovle),
+              meta: { requiresAuth: true },
+            },
+            {
+              path: "update",
+              name: "Employee Profile Update",
+              component: (resovle: any) => import(
+                `@src/views/admin/employeeProfile/update.vue`
+              ).then(resovle),
+              meta: { requiresAuth: true },
+            },
+          ]
+        }
       ]
     },
   ],

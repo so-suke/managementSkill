@@ -1,16 +1,20 @@
 <template>
   <v-container fill-height fluid grid-list-xl>
     <v-row>
-      <v-col cols="3" v-for="n in 10" v-bind:key="n">
-        <material-card class="v-card-profile shaped">
-          <v-avatar slot="offset" class="mx-auto d-block elevation-6" size="150">
-            <img src="https://cdn.vuetifyjs.com/images/cards/halcyon.png" />
-          </v-avatar>
-          <v-card-text class="text-center">
-            <p class="title">酒井 一樹</p>
-            <p class="subtitle-2 mb-0">フロントエンドエンジニア</p>
-          </v-card-text>
-        </material-card>
+      <v-col cols="3" v-for="employee in employees" v-bind:key="employee.id">
+        <router-link
+          :to="{ name: 'Employee Profile', params: { id: employee.id }}"
+        >
+          <material-card class="v-card-profile shaped">
+            <v-avatar slot="offset" class="mx-auto d-block elevation-6" size="150">
+              <img :src="employee.profile_image_path" />
+            </v-avatar>
+            <v-card-text class="text-center">
+              <p class="title">{{ employee.last_name }} {{ employee.first_name }}</p>
+              <p class="subtitle-2 mb-0">{{ employee.job_title.name }}</p>
+            </v-card-text>
+          </material-card>
+        </router-link>
       </v-col>
     </v-row>
   </v-container>
@@ -31,7 +35,7 @@ export default class EmployeeList extends Vue {
     window.axios
       .get(`/api/employees`)
       .then(res => {
-        console.log(res.data);
+        this.employees = res.data;
       })
       .catch(err => {
         console.log(err);

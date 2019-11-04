@@ -39,7 +39,7 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        //
+        return Employee::with('jobTitle')->find($id);
     }
 
     /**

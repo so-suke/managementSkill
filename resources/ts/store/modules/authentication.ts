@@ -4,7 +4,7 @@ import store from '../index';
 @Module({ name: 'authentication', namespaced: true })
 export default class AuthenticationModule extends VuexModule {
   public isLogin: boolean = false;
-  private user: any = {};
+  public user: any = {};
 
   @Mutation
   public setIsLogin(isLogin: boolean) {
@@ -15,5 +15,3 @@ export default class AuthenticationModule extends VuexModule {
     this.user = user;
   }
 }
-
-// export const AuthenticationModule2 = getModule(AuthenticationModule);
