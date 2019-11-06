@@ -36,7 +36,7 @@ class CreateEmployeesTable extends Migration
             $table->enum('gender', ['male', 'female']);
             $table->date('hired_at');
             $table->date('birth_at');
-            $table->string('remarks', 300);
+            $table->string('remarks', 300)->nullable();
             $table->rememberToken();
             $table->timestamps();
 
