@@ -80,7 +80,23 @@ const router = new Router({
               meta: { requiresAuth: true },
             },
           ]
-        }
+        },
+        {
+          path: "append-employee",
+          name: "Append Employee",
+          component: (resovle: any) => import(
+            `@src/views/admin/EmployeeAppend.vue`
+          ).then(resovle),
+          meta: { requiresAuth: true },
+        },
+        {
+          path: "skill-list",
+          name: "Skill List",
+          component: (resovle: any) => import(
+            `@src/views/admin/SkillList.vue`
+          ).then(resovle),
+          meta: { requiresAuth: true },
+        },
       ]
     },
   ],
@@ -106,7 +122,13 @@ router.beforeEach((to, from, next) => {
       next()
     }
   } else {
-    next();
+    if (store.state.authenticationModule.isLogin) {
+      next({
+        name: 'Admin Wrapper'
+      })
+    } else {
+      next();
+    }
   }
 });
 

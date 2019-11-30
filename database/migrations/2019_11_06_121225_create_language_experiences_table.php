@@ -23,7 +23,7 @@ class CreateLanguageExperiencesTable extends Migration
             $table->unique(['employee_id', 'language_id']);
 
             $table->foreign('employee_id')->references('id')->on('employees');
-            $table->foreign('language_id')->references('id')->on('languages');
+            $table->foreign('language_id')->references('id')->on('languages')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('experience_period_id')->references('id')->on('experience_periods');
         });
     }

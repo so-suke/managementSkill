@@ -1,1 +1,2 @@
+import './veeValidate'
 import './components'

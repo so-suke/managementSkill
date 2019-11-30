@@ -1,5 +1,4 @@
 import { Module, VuexModule, Action, Mutation, getModule } from 'vuex-module-decorators';
-import store from '../index';
 
 @Module({ name: 'authentication', namespaced: true })
 export default class AuthenticationModule extends VuexModule {

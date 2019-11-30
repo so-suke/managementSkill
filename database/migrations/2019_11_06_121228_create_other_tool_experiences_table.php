@@ -23,7 +23,7 @@ class CreateOtherToolExperiencesTable extends Migration
             $table->unique(['employee_id', 'other_tool_id']);
 
             $table->foreign('employee_id')->references('id')->on('employees');
-            $table->foreign('other_tool_id')->references('id')->on('other_tools');
+            $table->foreign('other_tool_id')->references('id')->on('other_tools')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('experience_period_id')->references('id')->on('experience_periods');
         });
     }

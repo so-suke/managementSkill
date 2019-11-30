@@ -14,7 +14,8 @@
       <v-flex align-center layout py-2>
         <router-link v-ripple class="toolbar-items" :to="{ name: 'Your Profile'}">
           <v-avatar size="50px">
-            <img src="https://cdn.vuetifyjs.com/images/cards/halcyon.png" alt />
+            <img :src="this.$store.state.authenticationModule.user.profile_image_path" alt />
+            <!-- <img src="https://cdn.vuetifyjs.com/images/cards/halcyon.png" alt /> -->
           </v-avatar>
         </router-link>
       </v-flex>
@@ -28,14 +29,6 @@ import { AppModule } from "@modules/app";
 
 @Component({})
 export default class Toolbar extends Vue {
-  private notifications: string[] = [
-    "Mike, John responded to your email",
-    "You have 5 new tasks",
-    "You're now a friend with Andrew",
-    "Another Notification",
-    "Another One"
-  ];
-
   private title: string = "";
   private responsive: boolean = false;
 

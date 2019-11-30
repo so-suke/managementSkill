@@ -15,7 +15,7 @@ class CreateExperiencePeriodsTable extends Migration
     {
         Schema::create('experience_periods', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }

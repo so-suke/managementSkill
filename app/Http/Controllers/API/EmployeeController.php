@@ -19,6 +19,18 @@ class EmployeeController extends Controller
         return Employee::with('jobTitle')->get();
     }
 
+    public function getEmails()
+    {
+        return Employee::pluck('email');
+    }
+
+    public function isUniqEmail(Request $request)
+    {
+        return response()->json([
+            'exists' => Employee::where('email', $request->email)->exists()
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -39,7 +51,15 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        return Employee::with('jobTitle')->find($id);
+        return Employee::with(
+            'jobTitle',
+            'languageExperiences',
+            'frameworkExperiences',
+            'otherToolExperiences',
+            'languageExperiences.language',
+            'frameworkExperiences.framework',
+            'otherToolExperiences.otherTool',
+        )->find($id);
     }
 
     /**

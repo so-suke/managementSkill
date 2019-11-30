@@ -69,6 +69,7 @@
 <script lang="ts">
 import { Component, Prop, Emit, Vue, Watch } from "vue-property-decorator";
 import { AppModule } from "@modules/app";
+import { DrawerLinksModule } from "@modules/drawerLinks";
 
 @Component({})
 export default class CoreDrawer extends Vue {
@@ -85,31 +86,9 @@ export default class CoreDrawer extends Vue {
     AppModule.setDrawer(val);
   }
 
-  links: any = [
-    {
-      to: {
-        name: "Employee Profile",
-        params: { id: this.$store.state.authenticationModule.user.id }
-      },
-      icon: "mdi-format-font",
-      text: "Your Profile"
-    },
-    {
-      to: { name: "Employee List" },
-      icon: "mdi-view-dashboard",
-      text: "Employee List"
-    },
-    {
-      to: "/append-employee",
-      icon: "mdi-account",
-      text: "Append Employee"
-    },
-    {
-      to: "/skill-list",
-      icon: "mdi-clipboard-outline",
-      text: "Skill List"
-    }
-  ];
+  get links() {
+    return DrawerLinksModule.drawerLinks;
+  }
 
   private logout() {
     this.$store.commit("authenticationModule/setUser", {});

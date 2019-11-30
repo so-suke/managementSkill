@@ -1048,7 +1048,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node-libs-browser/node_modules/process/browser.js */ "./node_modules/node-libs-browser/node_modules/process/browser.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -2155,6 +2155,25 @@ exports.push([module.i, "/** Ripples */\n/** Elements */\n.theme--light.v-divide
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VFileInput/VFileInput.sass":
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--10-2!./node_modules/sass-loader/dist/cjs.js??ref--10-3!./node_modules/vuetify/src/components/VFileInput/VFileInput.sass ***!
+  \*************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/** Ripples */\n/** Elements */\n.theme--light.v-file-input .v-file-input__text {\n  color: rgba(0, 0, 0, 0.87);\n}\n.theme--light.v-file-input .v-file-input__text--placeholder {\n  color: rgba(0, 0, 0, 0.54);\n}\n\n.theme--dark.v-file-input .v-file-input__text {\n  color: #FFFFFF;\n}\n.theme--dark.v-file-input .v-file-input__text--placeholder {\n  color: rgba(255, 255, 255, 0.7);\n}\n\n.v-file-input input[type=file] {\n  opacity: 0;\n  max-width: 0;\n  width: 0;\n}\n\n.v-file-input .v-file-input__text {\n  align-items: center;\n  align-self: stretch;\n  display: flex;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.v-file-input .v-file-input__text.v-file-input__text--chips {\n  flex-wrap: wrap;\n}\n.v-file-input .v-file-input__text .v-chip {\n  margin: 4px;\n}\n\n.v-file-input.v-text-field--filled:not(.v-text-field--single-line) .v-file-input__text {\n  padding-top: 22px;\n}\n\n.v-file-input.v-text-field--outlined .v-text-field__slot {\n  padding: 6px 0;\n}\n.v-file-input.v-text-field--outlined.v-input--dense .v-text-field__slot {\n  padding: 3px 0;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VGrid/VGrid.sass":
 /*!***************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--10-2!./node_modules/sass-loader/dist/cjs.js??ref--10-3!./node_modules/vuetify/src/components/VGrid/VGrid.sass ***!
@@ -2933,10 +2952,10 @@ var deepmerge_1 = deepmerge;
 
 /***/ }),
 
-/***/ "./node_modules/node-libs-browser/node_modules/process/browser.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/node-libs-browser/node_modules/process/browser.js ***!
-  \************************************************************************/
+/***/ "./node_modules/process/browser.js":
+/*!*****************************************!*\
+  !*** ./node_modules/process/browser.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -3322,7 +3341,7 @@ process.umask = function() { return 0; };
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../node-libs-browser/node_modules/process/browser.js */ "./node_modules/node-libs-browser/node_modules/process/browser.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -4142,35 +4161,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const vue_property_decorator_1 = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/vue-property-decorator.js");
 const app_1 = __webpack_require__(/*! @modules/app */ "./resources/ts/store/modules/app.ts");
+const drawerLinks_1 = __webpack_require__(/*! @modules/drawerLinks */ "./resources/ts/store/modules/drawerLinks.ts");
 let CoreDrawer = class CoreDrawer extends vue_property_decorator_1.Vue {
     constructor() {
         super(...arguments);
         this.logoutDialog = false;
-        this.links = [
-            {
-                to: {
-                    name: "Employee Profile",
-                    params: { id: this.$store.state.authenticationModule.user.id }
-                },
-                icon: "mdi-format-font",
-                text: "Your Profile"
-            },
-            {
-                to: { name: "Employee List" },
-                icon: "mdi-view-dashboard",
-                text: "Employee List"
-            },
-            {
-                to: "/append-employee",
-                icon: "mdi-account",
-                text: "Append Employee"
-            },
-            {
-                to: "/skill-list",
-                icon: "mdi-clipboard-outline",
-                text: "Skill List"
-            }
-        ];
     }
     get image() {
         return app_1.AppModule.image;
@@ -4180,6 +4175,9 @@ let CoreDrawer = class CoreDrawer extends vue_property_decorator_1.Vue {
     }
     set inputValue(val) {
         app_1.AppModule.setDrawer(val);
+    }
+    get links() {
+        return drawerLinks_1.DrawerLinksModule.drawerLinks;
     }
     logout() {
         this.$store.commit("authenticationModule/setUser", {});
@@ -4216,13 +4214,6 @@ const app_1 = __webpack_require__(/*! @modules/app */ "./resources/ts/store/modu
 let Toolbar = class Toolbar extends vue_property_decorator_1.Vue {
     constructor() {
         super(...arguments);
-        this.notifications = [
-            "Mike, John responded to your email",
-            "You have 5 new tasks",
-            "You're now a friend with Andrew",
-            "Another Notification",
-            "Another One"
-        ];
         this.title = "";
         this.responsive = false;
     }
@@ -4303,19 +4294,91 @@ const vue_property_decorator_1 = __webpack_require__(/*! vue-property-decorator 
 const Toolbar_vue_1 = __webpack_require__(/*! @core/Toolbar.vue */ "./resources/ts/core/Toolbar.vue");
 const Drawer_vue_1 = __webpack_require__(/*! @core/Drawer.vue */ "./resources/ts/core/Drawer.vue");
 const View_vue_1 = __webpack_require__(/*! @core/View.vue */ "./resources/ts/core/View.vue");
+const skill_1 = __webpack_require__(/*! @modules/skill */ "./resources/ts/store/modules/skill.ts");
+const email_1 = __webpack_require__(/*! @modules/email */ "./resources/ts/store/modules/email.ts");
+const drawerLinks_1 = __webpack_require__(/*! @modules/drawerLinks */ "./resources/ts/store/modules/drawerLinks.ts");
 let AdminWrapper = class AdminWrapper extends vue_property_decorator_1.Vue {
-    mounted() {
+    constructor() {
+        super(...arguments);
+        this.drawerLinks = {
+            admin: [
+                {
+                    to: {
+                        name: "Employee Profile",
+                        params: { id: this.$store.state.authenticationModule.user.id }
+                    },
+                    icon: "mdi-format-font",
+                    text: "Your Profile"
+                },
+                {
+                    to: { name: "Employee List" },
+                    icon: "mdi-view-dashboard",
+                    text: "Employee List"
+                },
+                {
+                    to: { name: "Append Employee" },
+                    icon: "mdi-account",
+                    text: "Append Employee"
+                },
+                {
+                    to: { name: "Skill List" },
+                    icon: "mdi-clipboard-outline",
+                    text: "Skill List"
+                }
+            ],
+            noAdmin: [
+                {
+                    to: {
+                        name: "Employee Profile",
+                        params: { id: this.$store.state.authenticationModule.user.id }
+                    },
+                    icon: "mdi-format-font",
+                    text: "Your Profile"
+                },
+                {
+                    to: { name: "Employee List" },
+                    icon: "mdi-view-dashboard",
+                    text: "Employee List"
+                }
+            ]
+        };
+    }
+    created() {
+        this.initDrawer();
         this.fetchData();
     }
+    initDrawer() {
+        const user = this.$store.state.authenticationModule.user;
+        if (user.is_admin === 1) {
+            drawerLinks_1.DrawerLinksModule.setDrawerLinks(this.drawerLinks.admin);
+        }
+        else if (user.is_admin === 0) {
+            drawerLinks_1.DrawerLinksModule.setDrawerLinks(this.drawerLinks.noAdmin);
+        }
+        else {
+            drawerLinks_1.DrawerLinksModule.setDrawerLinks(this.drawerLinks.noAdmin);
+        }
+    }
     fetchData() {
-        // window.axios
-        //   .get(`/api/employees`)
-        //   .then(res => {
-        //     console.log(res.data);
-        //   })
-        //   .catch(err => {
-        //     console.log(err);
-        //   });
+        window.axios
+            .get(`/api/getSkills`)
+            .then(res => {
+            skill_1.SkillModule.setExperiencePeriods(res.data.experiencePeriods);
+            skill_1.SkillModule.setLanguages(res.data.languages);
+            skill_1.SkillModule.setFrameworks(res.data.frameworks);
+            skill_1.SkillModule.setOtherTools(res.data.otherTools);
+        })
+            .catch(err => {
+            console.log(err);
+        });
+        window.axios
+            .get(`/api/getEmails`)
+            .then(res => {
+            email_1.EmailModule.setEmails(res.data);
+        })
+            .catch(err => {
+            console.log(err);
+        });
     }
 };
 AdminWrapper = __decorate([
@@ -4328,6 +4391,111 @@ AdminWrapper = __decorate([
     })
 ], AdminWrapper);
 exports.default = AdminWrapper;
+
+
+/***/ }),
+
+/***/ "./node_modules/ts-loader/index.js?!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib/index.js?!./resources/ts/views/admin/EmployeeAppend.vue?vue&type=script&lang=ts&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/ts-loader??ref--5!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./resources/ts/views/admin/EmployeeAppend.vue?vue&type=script&lang=ts& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const vue_property_decorator_1 = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/vue-property-decorator.js");
+const vee_validate_1 = __webpack_require__(/*! vee-validate */ "./node_modules/vee-validate/dist/vee-validate.esm.js");
+const jobTitles_1 = __webpack_require__(/*! @modules/jobTitles */ "./resources/ts/store/modules/jobTitles.ts");
+let EmployeeAppend = class EmployeeAppend extends vue_property_decorator_1.Vue {
+    constructor() {
+        super(...arguments);
+        this.valid = false;
+        this.isAdminCheck = "0";
+        this.lastName = "";
+        this.firstName = "";
+        this.lastNameKana = "";
+        this.firstNameKana = "";
+        this.jobTitleId = -1;
+        this.email = "";
+        this.password = "";
+        this.gender = "";
+        this.profileImage = null;
+        this.date = {
+            hire: new Date().toISOString().substr(0, 10),
+            birth: new Date().toISOString().substr(0, 10)
+        };
+        this.isShowDatePicker = {
+            hire: false,
+            birth: false
+        };
+        this.remarks = "";
+    }
+    mounted() {
+        window.axios
+            .get(`/api/jobTitles`)
+            .then(res => {
+            jobTitles_1.JobTitlesModule.setJobTitles(res.data);
+        })
+            .catch(err => {
+            console.log(err);
+        });
+        this.initInput();
+    }
+    initInput() {
+        this.lastName = "sample";
+        this.firstName = "sample";
+        this.lastNameKana = "sample";
+        this.firstNameKana = "sample";
+        this.jobTitleId = 2;
+        this.email = "sample@gmail.com";
+        this.password = "password";
+        this.gender = "male";
+        this.remarks = "sample";
+    }
+    get jobTitles() {
+        return jobTitles_1.JobTitlesModule.jobTitles;
+    }
+    register(validate) {
+        validate().then((valid) => {
+            if (valid === false)
+                return;
+            const params = new URLSearchParams();
+            params.append("is_admin", this.isAdminCheck);
+            params.append("job_title_id", this.jobTitleId + "");
+            params.append("last_name", this.lastName);
+            params.append("first_name", this.firstName);
+            params.append("last_name_kana", this.lastNameKana);
+            params.append("first_name_kana", this.firstNameKana);
+            params.append("profile_image_path", this.profileImage.name);
+            params.append("email", this.email);
+            params.append("password", this.password);
+            params.append("gender", this.gender);
+            params.append("hired_at", this.date.hire);
+            params.append("birth_at", this.date.birth);
+            params.append("remarks", this.remarks);
+            window.axios.post("api/employees", params).then(res => {
+                console.log(res);
+            });
+        });
+    }
+};
+EmployeeAppend = __decorate([
+    vue_property_decorator_1.Component({
+        components: {
+            ValidationObserver: vee_validate_1.ValidationObserver,
+            ValidationProvider: vee_validate_1.ValidationProvider
+        }
+    })
+], EmployeeAppend);
+exports.default = EmployeeAppend;
 
 
 /***/ }),
@@ -4376,6 +4544,133 @@ exports.default = EmployeeList;
 
 /***/ }),
 
+/***/ "./node_modules/ts-loader/index.js?!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib/index.js?!./resources/ts/views/admin/SkillList.vue?vue&type=script&lang=ts&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/ts-loader??ref--5!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./resources/ts/views/admin/SkillList.vue?vue&type=script&lang=ts& ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const vue_property_decorator_1 = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/vue-property-decorator.js");
+const skill_1 = __webpack_require__(/*! @modules/skill */ "./resources/ts/store/modules/skill.ts");
+let SkillList = class SkillList extends vue_property_decorator_1.Vue {
+    constructor() {
+        super(...arguments);
+        this.skillName = "";
+        this.createSkillDialog = false;
+        this.updateSkillDialog = false;
+        this.deleteSkillDialog = false;
+        this.willUpdateSkillId = -1;
+        this.willUpdateSkillName = "";
+        this.willDeleteSkillId = -1;
+        this.SELECTED_SKILL_MODE = {
+            language: {
+                sql: "language",
+                routing: "languages"
+            },
+            framework: {
+                sql: "framework",
+                routing: "frameworks"
+            },
+            otherTool: {
+                sql: "other_tool",
+                routing: "otherTools"
+            }
+        };
+        this.selectedSkillMode = {};
+    }
+    get skillGroup() {
+        return [
+            {
+                name: "言語",
+                nameEn: "language",
+                items: skill_1.SkillModule.languages
+            },
+            {
+                name: "フレームワーク",
+                nameEn: "framework",
+                items: skill_1.SkillModule.frameworks
+            },
+            {
+                name: "その他ツール",
+                nameEn: "otherTool",
+                items: skill_1.SkillModule.otherTools
+            }
+        ];
+    }
+    initSkills() {
+        window.axios
+            .get(`/api/getSkills`)
+            .then(res => {
+            skill_1.SkillModule.setLanguages(res.data.languages);
+            skill_1.SkillModule.setFrameworks(res.data.frameworks);
+            skill_1.SkillModule.setOtherTools(res.data.otherTools);
+        })
+            .catch(err => {
+            console.log(err);
+        });
+    }
+    showCreateSkillDialog(selectedSkillMode) {
+        this.selectedSkillMode = selectedSkillMode;
+        this.createSkillDialog = true;
+    }
+    createSkill() {
+        const params = new URLSearchParams();
+        params.append("name", this.skillName);
+        window.axios
+            .post(`api/${this.selectedSkillMode.routing}`, params)
+            .then(res => {
+            this.createSkillDialog = false;
+            this.initSkills();
+        });
+    }
+    showDeleteSkillDialog(skillId, selectedSkillMode) {
+        this.willDeleteSkillId = skillId;
+        this.selectedSkillMode = selectedSkillMode;
+        this.deleteSkillDialog = true;
+    }
+    deleteSkill() {
+        window.axios
+            .delete(`api/${this.selectedSkillMode.routing}/${this.willDeleteSkillId}`)
+            .then(res => {
+            this.initSkills();
+            this.deleteSkillDialog = false;
+        });
+    }
+    showUpdateSkillDialog(skillId, selectedSkillMode, skillName) {
+        this.willUpdateSkillId = skillId;
+        this.selectedSkillMode = selectedSkillMode;
+        this.willUpdateSkillName = skillName;
+        this.updateSkillDialog = true;
+    }
+    updateSkill() {
+        const params = new URLSearchParams();
+        params.append("name", this.willUpdateSkillName);
+        window.axios
+            .put(`api/${this.selectedSkillMode.routing}/${this.willUpdateSkillId}`, params)
+            .then(res => {
+            this.updateSkillDialog = false;
+            this.initSkills();
+        });
+    }
+};
+SkillList = __decorate([
+    vue_property_decorator_1.Component({})
+], SkillList);
+exports.default = SkillList;
+
+
+/***/ }),
+
 /***/ "./node_modules/ts-loader/index.js?!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib/index.js?!./resources/ts/views/admin/employeeProfile/index.vue?vue&type=script&lang=ts&":
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/ts-loader??ref--5!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./resources/ts/views/admin/employeeProfile/index.vue?vue&type=script&lang=ts& ***!
@@ -4393,19 +4688,136 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const vue_property_decorator_1 = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/vue-property-decorator.js");
+const skill_1 = __webpack_require__(/*! @modules/skill */ "./resources/ts/store/modules/skill.ts");
 let YourProfile = class YourProfile extends vue_property_decorator_1.Vue {
     constructor() {
         super(...arguments);
         this.employee = {
             job_title: {}
         };
+        this.SELECTED_SKILL_MODE = {
+            language: {
+                sql: "language",
+                routing: "language"
+            },
+            framework: {
+                sql: "framework",
+                routing: "framework"
+            },
+            otherTool: {
+                sql: "other_tool",
+                routing: "otherTool"
+            }
+        };
+        this.selectedSkillMode = {};
+        this.experienceSkills = [];
+        this.createExperienceDialog = false;
+        this.experienceSkillId = "-1";
+        this.updateExperiencePeriodDialog = false;
+        this.deleteExperienceDialog = false;
+        this.willUpdateExperienceId = -1;
+        this.willDeleteExperienceId = -1;
+        this.experiencePeriodId = "-1";
+    }
+    get experiencePeriods() {
+        return skill_1.SkillModule.experiencePeriods;
     }
     mounted() {
-        this.initEmployee(this.$route.params.id);
+        // console.log(this.$store.state.authenticationModule.user);
     }
     initEmployee(id) {
         window.axios.get(`/api/employees/${id}`).then(res => {
             this.employee = res.data;
+        });
+    }
+    showUpdateExperiencePeriodDialog(experienceId, selectedSkillMode) {
+        this.willUpdateExperienceId = experienceId;
+        this.selectedSkillMode = selectedSkillMode;
+        this.updateExperiencePeriodDialog = true;
+    }
+    updateExperiencePeriod() {
+        //経験期間の更新
+        if (this.experiencePeriodId === "-1") {
+            console.warn("経験期間を選択して下さい処理を書く");
+            return;
+        }
+        const params = new URLSearchParams();
+        params.append("experience_period_id", this.experiencePeriodId);
+        window.axios
+            .put(`api/${this.selectedSkillMode.routing}Experiences/${this.willUpdateExperienceId}`, params)
+            .then(res => {
+            this.updateExperiencePeriodDialog = false;
+            this.initEmployee(this.$route.params.id);
+        });
+    }
+    showDeleteExperienceDialog(experienceId, selectedSkillMode) {
+        this.willDeleteExperienceId = experienceId;
+        this.selectedSkillMode = selectedSkillMode;
+        this.deleteExperienceDialog = true;
+    }
+    deleteExperience() {
+        window.axios
+            .delete(`api/${this.selectedSkillMode.routing}Experiences/${this.willDeleteExperienceId}`)
+            .then(res => {
+            this.initEmployee(this.$route.params.id);
+            this.deleteExperienceDialog = false;
+        });
+    }
+    showCreateExperienceDialog(skillMode) {
+        // this.willUpdateExperienceId = experienceId;
+        this.selectedSkillMode = skillMode;
+        if (this.selectedSkillMode === this.SELECTED_SKILL_MODE.language) {
+            const languageIds = this.employee.language_experiences.map((experience) => {
+                return experience.language_id;
+            });
+            this.experienceSkills = skill_1.SkillModule.languages.filter(item => {
+                if (languageIds.includes(item.id) !== true) {
+                    return item;
+                }
+            });
+        }
+        else if (this.selectedSkillMode === this.SELECTED_SKILL_MODE.framework) {
+            // this.experienceSkills = SkillModule.frameworks;
+            const frameworkIds = this.employee.framework_experiences.map((experience) => {
+                return experience.framework_id;
+            });
+            this.experienceSkills = skill_1.SkillModule.frameworks.filter(item => {
+                if (frameworkIds.includes(item.id) !== true) {
+                    return item;
+                }
+            });
+        }
+        else if (this.selectedSkillMode === this.SELECTED_SKILL_MODE.otherTool) {
+            // this.experienceSkills = SkillModule.otherTools;
+            const otherToolIds = this.employee.other_tool_experiences.map((experience) => {
+                return experience.other_tool_id;
+            });
+            this.experienceSkills = skill_1.SkillModule.otherTools.filter(item => {
+                if (otherToolIds.includes(item.id) !== true) {
+                    return item;
+                }
+            });
+        }
+        else {
+            this.experienceSkills = skill_1.SkillModule.languages;
+        }
+        this.createExperienceDialog = true;
+    }
+    createExperience() {
+        if (this.experienceSkillId === "-1" || this.experiencePeriodId === "-1") {
+            console.warn("選択して下さい処理を書く");
+            return;
+        }
+        const params = new URLSearchParams();
+        params.append("employee_id", this.$route.params.id);
+        params.append(`${this.selectedSkillMode.sql}_id`, this.experienceSkillId);
+        params.append("experience_period_id", this.experiencePeriodId);
+        window.axios
+            .post(`api/${this.selectedSkillMode.routing}Experiences/`, params)
+            .then(res => {
+            console.log(res.data);
+            this.createExperienceDialog = false;
+            this.initEmployee(this.$route.params.id);
         });
     }
     // プロフィール社員がログイン社員かどうか
@@ -4452,10 +4864,23 @@ const vue_property_decorator_1 = __webpack_require__(/*! vue-property-decorator 
 let YourProfileUpdate = class YourProfileUpdate extends vue_property_decorator_1.Vue {
     constructor() {
         super(...arguments);
-        this.date = {
-            hire: new Date().toISOString().substr(0, 10),
-            birth: new Date().toISOString().substr(0, 10)
-        };
+        this.lastName = "";
+        this.firstName = "";
+        this.lastNameKana = "";
+        this.firstNameKana = "";
+        this.jobTitleId = "0";
+        this.hiredAt = new Date().toISOString().substr(0, 10);
+        this.birthAt = new Date().toISOString().substr(0, 10);
+        this.jobTitles = [
+            {
+                id: "1",
+                name: "フロントエンドエンジニア"
+            },
+            {
+                id: "2",
+                name: "サーバーサイドエンジニア"
+            }
+        ];
         this.isShowDatePicker = {
             hire: false,
             birth: false
@@ -4463,10 +4888,36 @@ let YourProfileUpdate = class YourProfileUpdate extends vue_property_decorator_1
         this.remarks = "";
     }
     mounted() {
-        console.log(this.$route.params.id);
+        this.initEmployee(this.$route.params.id);
+    }
+    initEmployee(id) {
+        window.axios.get(`/api/employees/${id}`).then(res => {
+            const employee = res.data;
+            this.lastName = employee.last_name;
+            this.firstName = employee.first_name;
+            this.lastNameKana = employee.last_name_kana;
+            this.firstNameKana = employee.first_name_kana;
+            this.jobTitleId = "" + employee.job_title.id;
+            this.remarks = employee.remarks;
+            this.hiredAt = employee.hired_at;
+            this.birthAt = employee.birth_at;
+        });
     }
     updateProfile() {
-        console.log(this.date);
+        const params = new URLSearchParams();
+        params.append("last_name", this.lastName);
+        params.append("first_name", this.firstName);
+        params.append("last_name_kana", this.lastNameKana);
+        params.append("first_name_kana", this.firstNameKana);
+        params.append("job_title_id", this.jobTitleId);
+        params.append("remarks", this.remarks);
+        params.append("hired_at", this.hiredAt);
+        params.append("birth_at", this.birthAt);
+        window.axios
+            .put(`/api/employees/${this.$route.params.id}`, params)
+            .then(res => {
+            this.$router.push({ name: "Employee Profile" });
+        });
     }
 };
 YourProfileUpdate = __decorate([
@@ -4495,6 +4946,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const vue_property_decorator_1 = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/vue-property-decorator.js");
 let AuthWrapper = class AuthWrapper extends vue_property_decorator_1.Vue {
+    mounted() {
+        // this.fetchData();
+    }
 };
 AuthWrapper = __decorate([
     vue_property_decorator_1.Component({})
@@ -4544,7 +4998,10 @@ let Login = class Login extends vue_property_decorator_1.Vue {
             window.axios.post("/api/me").then(res => {
                 this.$store.commit("authenticationModule/setIsLogin", true);
                 this.$store.commit("authenticationModule/setUser", res.data);
-                this.$router.push({ name: "Admin Wrapper" });
+                this.$router.push({
+                    name: "Employee Profile",
+                    params: { id: this.$store.state.authenticationModule.user.id }
+                });
                 app_1.AppModule.setIsShowSnackbar(true);
             });
         })
@@ -8079,8 +8536,8 @@ var render = function() {
                   _c("v-avatar", { attrs: { size: "50px" } }, [
                     _c("img", {
                       attrs: {
-                        src:
-                          "https://cdn.vuetifyjs.com/images/cards/halcyon.png",
+                        src: this.$store.state.authenticationModule.user
+                          .profile_image_path,
                         alt: ""
                       }
                     })
@@ -8169,6 +8626,813 @@ var render = function() {
         "v-fade-transition",
         { attrs: { mode: "out-in" } },
         [_c("router-view")],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib/index.js?!./resources/ts/views/admin/EmployeeAppend.vue?vue&type=template&id=05928bd1&":
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./resources/ts/views/admin/EmployeeAppend.vue?vue&type=template&id=05928bd1& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-container",
+    { attrs: { fluid: "", "fill-height": "" } },
+    [
+      _c(
+        "v-layout",
+        { attrs: { "align-center": "", "justify-center": "" } },
+        [
+          _c(
+            "v-flex",
+            { staticClass: "col-10" },
+            [
+              _c("ValidationObserver", {
+                scopedSlots: _vm._u([
+                  {
+                    key: "default",
+                    fn: function(ref) {
+                      var validate = ref.validate
+                      return [
+                        _c(
+                          "material-card",
+                          {
+                            attrs: {
+                              color: "green",
+                              title: "新規社員登録フォーム"
+                            }
+                          },
+                          [
+                            _c(
+                              "v-card-text",
+                              [
+                                _c(
+                                  "v-form",
+                                  {
+                                    ref: "form",
+                                    attrs: { "lazy-validation": "" },
+                                    model: {
+                                      value: _vm.valid,
+                                      callback: function($$v) {
+                                        _vm.valid = $$v
+                                      },
+                                      expression: "valid"
+                                    }
+                                  },
+                                  [
+                                    _c(
+                                      "v-row",
+                                      [
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12" } },
+                                          [
+                                            _c("v-checkbox", {
+                                              attrs: {
+                                                label:
+                                                  "管理者にする場合はチェックして下さい",
+                                                color: "success",
+                                                "false-value": "0",
+                                                "true-value": "1",
+                                                "hide-details": ""
+                                              },
+                                              model: {
+                                                value: _vm.isAdminCheck,
+                                                callback: function($$v) {
+                                                  _vm.isAdminCheck = $$v
+                                                },
+                                                expression: "isAdminCheck"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12", md: "6" } },
+                                          [
+                                            _c("ValidationProvider", {
+                                              attrs: {
+                                                name: "姓",
+                                                rules: "required"
+                                              },
+                                              scopedSlots: _vm._u(
+                                                [
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var errors = ref.errors
+                                                      return [
+                                                        _c("v-text-field", {
+                                                          attrs: {
+                                                            label: "姓",
+                                                            name: "lastName",
+                                                            type: "text",
+                                                            "error-messages":
+                                                              errors[0]
+                                                          },
+                                                          model: {
+                                                            value: _vm.lastName,
+                                                            callback: function(
+                                                              $$v
+                                                            ) {
+                                                              _vm.lastName = $$v
+                                                            },
+                                                            expression:
+                                                              "lastName"
+                                                          }
+                                                        })
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                null,
+                                                true
+                                              )
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12", md: "6" } },
+                                          [
+                                            _c("ValidationProvider", {
+                                              attrs: {
+                                                name: "名",
+                                                rules: "required"
+                                              },
+                                              scopedSlots: _vm._u(
+                                                [
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var errors = ref.errors
+                                                      return [
+                                                        _c("v-text-field", {
+                                                          attrs: {
+                                                            label: "名",
+                                                            name: "firstName",
+                                                            type: "text",
+                                                            "error-messages":
+                                                              errors[0]
+                                                          },
+                                                          model: {
+                                                            value:
+                                                              _vm.firstName,
+                                                            callback: function(
+                                                              $$v
+                                                            ) {
+                                                              _vm.firstName = $$v
+                                                            },
+                                                            expression:
+                                                              "firstName"
+                                                          }
+                                                        })
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                null,
+                                                true
+                                              )
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12", md: "6" } },
+                                          [
+                                            _c("ValidationProvider", {
+                                              attrs: {
+                                                name: "姓(カナ)",
+                                                rules: "required"
+                                              },
+                                              scopedSlots: _vm._u(
+                                                [
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var errors = ref.errors
+                                                      return [
+                                                        _c("v-text-field", {
+                                                          attrs: {
+                                                            label: "姓(カナ)",
+                                                            name:
+                                                              "lastNameKana",
+                                                            type: "text",
+                                                            "error-messages":
+                                                              errors[0]
+                                                          },
+                                                          model: {
+                                                            value:
+                                                              _vm.lastNameKana,
+                                                            callback: function(
+                                                              $$v
+                                                            ) {
+                                                              _vm.lastNameKana = $$v
+                                                            },
+                                                            expression:
+                                                              "lastNameKana"
+                                                          }
+                                                        })
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                null,
+                                                true
+                                              )
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12", md: "6" } },
+                                          [
+                                            _c("ValidationProvider", {
+                                              attrs: {
+                                                name: "名(カナ)",
+                                                rules: "required"
+                                              },
+                                              scopedSlots: _vm._u(
+                                                [
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var errors = ref.errors
+                                                      return [
+                                                        _c("v-text-field", {
+                                                          attrs: {
+                                                            label: "名(カナ)",
+                                                            name:
+                                                              "firstNameKana",
+                                                            type: "text",
+                                                            "error-messages":
+                                                              errors[0]
+                                                          },
+                                                          model: {
+                                                            value:
+                                                              _vm.firstNameKana,
+                                                            callback: function(
+                                                              $$v
+                                                            ) {
+                                                              _vm.firstNameKana = $$v
+                                                            },
+                                                            expression:
+                                                              "firstNameKana"
+                                                          }
+                                                        })
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                null,
+                                                true
+                                              )
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12" } },
+                                          [
+                                            _c("ValidationProvider", {
+                                              attrs: {
+                                                name: "役職",
+                                                rules: "required"
+                                              },
+                                              scopedSlots: _vm._u(
+                                                [
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var errors = ref.errors
+                                                      return [
+                                                        _c("v-select", {
+                                                          attrs: {
+                                                            label: "役職",
+                                                            items:
+                                                              _vm.jobTitles,
+                                                            "item-text": "name",
+                                                            "item-value": "id",
+                                                            "error-messages":
+                                                              errors[0]
+                                                          },
+                                                          model: {
+                                                            value:
+                                                              _vm.jobTitleId,
+                                                            callback: function(
+                                                              $$v
+                                                            ) {
+                                                              _vm.jobTitleId = $$v
+                                                            },
+                                                            expression:
+                                                              "jobTitleId"
+                                                          }
+                                                        })
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                null,
+                                                true
+                                              )
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12" } },
+                                          [
+                                            _c("v-file-input", {
+                                              attrs: {
+                                                accept: "image/png",
+                                                label: "プロフィール画像"
+                                              },
+                                              model: {
+                                                value: _vm.profileImage,
+                                                callback: function($$v) {
+                                                  _vm.profileImage = $$v
+                                                },
+                                                expression: "profileImage"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12", md: "6" } },
+                                          [
+                                            _c("ValidationProvider", {
+                                              attrs: {
+                                                name: "メールアドレス",
+                                                rules:
+                                                  "required|email|uniqEmail"
+                                              },
+                                              scopedSlots: _vm._u(
+                                                [
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var errors = ref.errors
+                                                      return [
+                                                        _c("v-text-field", {
+                                                          attrs: {
+                                                            label:
+                                                              "メールアドレス",
+                                                            name: "email",
+                                                            type: "email",
+                                                            "error-messages":
+                                                              errors[0]
+                                                          },
+                                                          model: {
+                                                            value: _vm.email,
+                                                            callback: function(
+                                                              $$v
+                                                            ) {
+                                                              _vm.email = $$v
+                                                            },
+                                                            expression: "email"
+                                                          }
+                                                        })
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                null,
+                                                true
+                                              )
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12", md: "6" } },
+                                          [
+                                            _c("ValidationProvider", {
+                                              attrs: {
+                                                name: "パスワード",
+                                                rules: "required|min:6|max:10"
+                                              },
+                                              scopedSlots: _vm._u(
+                                                [
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var errors = ref.errors
+                                                      return [
+                                                        _c("v-text-field", {
+                                                          attrs: {
+                                                            id: "password",
+                                                            label: "Password",
+                                                            name: "password",
+                                                            type: "password",
+                                                            "error-messages":
+                                                              errors[0]
+                                                          },
+                                                          model: {
+                                                            value: _vm.password,
+                                                            callback: function(
+                                                              $$v
+                                                            ) {
+                                                              _vm.password = $$v
+                                                            },
+                                                            expression:
+                                                              "password"
+                                                          }
+                                                        })
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                null,
+                                                true
+                                              )
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12" } },
+                                          [
+                                            _c("ValidationProvider", {
+                                              attrs: {
+                                                name: "性別",
+                                                rules: "required"
+                                              },
+                                              scopedSlots: _vm._u(
+                                                [
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var errors = ref.errors
+                                                      return [
+                                                        _c(
+                                                          "v-radio-group",
+                                                          {
+                                                            attrs: {
+                                                              row: "",
+                                                              "error-messages":
+                                                                errors[0]
+                                                            },
+                                                            model: {
+                                                              value: _vm.gender,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.gender = $$v
+                                                              },
+                                                              expression:
+                                                                "gender"
+                                                            }
+                                                          },
+                                                          [
+                                                            _c("v-radio", {
+                                                              attrs: {
+                                                                label: "男性",
+                                                                value: "male"
+                                                              }
+                                                            }),
+                                                            _vm._v(" "),
+                                                            _c("v-radio", {
+                                                              attrs: {
+                                                                label: "女性",
+                                                                value: "female"
+                                                              }
+                                                            })
+                                                          ],
+                                                          1
+                                                        )
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                null,
+                                                true
+                                              )
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12", md: "6" } },
+                                          [
+                                            _c(
+                                              "v-menu",
+                                              {
+                                                attrs: {
+                                                  "close-on-content-click": false,
+                                                  "nudge-right": 40,
+                                                  transition:
+                                                    "scale-transition",
+                                                  "min-width": "290px"
+                                                },
+                                                scopedSlots: _vm._u(
+                                                  [
+                                                    {
+                                                      key: "activator",
+                                                      fn: function(ref) {
+                                                        var on = ref.on
+                                                        return [
+                                                          _c(
+                                                            "v-text-field",
+                                                            _vm._g(
+                                                              {
+                                                                attrs: {
+                                                                  label:
+                                                                    "入社日",
+                                                                  readonly: ""
+                                                                },
+                                                                model: {
+                                                                  value:
+                                                                    _vm.date
+                                                                      .hire,
+                                                                  callback: function(
+                                                                    $$v
+                                                                  ) {
+                                                                    _vm.$set(
+                                                                      _vm.date,
+                                                                      "hire",
+                                                                      $$v
+                                                                    )
+                                                                  },
+                                                                  expression:
+                                                                    "date.hire"
+                                                                }
+                                                              },
+                                                              on
+                                                            )
+                                                          )
+                                                        ]
+                                                      }
+                                                    }
+                                                  ],
+                                                  null,
+                                                  true
+                                                ),
+                                                model: {
+                                                  value:
+                                                    _vm.isShowDatePicker.hire,
+                                                  callback: function($$v) {
+                                                    _vm.$set(
+                                                      _vm.isShowDatePicker,
+                                                      "hire",
+                                                      $$v
+                                                    )
+                                                  },
+                                                  expression:
+                                                    "isShowDatePicker.hire"
+                                                }
+                                              },
+                                              [
+                                                _vm._v(" "),
+                                                _c("v-date-picker", {
+                                                  on: {
+                                                    input: function($event) {
+                                                      _vm.isShowDatePicker.hire = false
+                                                    }
+                                                  },
+                                                  model: {
+                                                    value: _vm.date.hire,
+                                                    callback: function($$v) {
+                                                      _vm.$set(
+                                                        _vm.date,
+                                                        "hire",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression: "date.hire"
+                                                  }
+                                                })
+                                              ],
+                                              1
+                                            )
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12", md: "6" } },
+                                          [
+                                            _c(
+                                              "v-menu",
+                                              {
+                                                attrs: {
+                                                  "close-on-content-click": false,
+                                                  "nudge-right": 40,
+                                                  transition:
+                                                    "scale-transition",
+                                                  "min-width": "290px"
+                                                },
+                                                scopedSlots: _vm._u(
+                                                  [
+                                                    {
+                                                      key: "activator",
+                                                      fn: function(ref) {
+                                                        var on = ref.on
+                                                        return [
+                                                          _c(
+                                                            "v-text-field",
+                                                            _vm._g(
+                                                              {
+                                                                attrs: {
+                                                                  label:
+                                                                    "誕生日",
+                                                                  readonly: ""
+                                                                },
+                                                                model: {
+                                                                  value:
+                                                                    _vm.date
+                                                                      .birth,
+                                                                  callback: function(
+                                                                    $$v
+                                                                  ) {
+                                                                    _vm.$set(
+                                                                      _vm.date,
+                                                                      "birth",
+                                                                      $$v
+                                                                    )
+                                                                  },
+                                                                  expression:
+                                                                    "date.birth"
+                                                                }
+                                                              },
+                                                              on
+                                                            )
+                                                          )
+                                                        ]
+                                                      }
+                                                    }
+                                                  ],
+                                                  null,
+                                                  true
+                                                ),
+                                                model: {
+                                                  value:
+                                                    _vm.isShowDatePicker.birth,
+                                                  callback: function($$v) {
+                                                    _vm.$set(
+                                                      _vm.isShowDatePicker,
+                                                      "birth",
+                                                      $$v
+                                                    )
+                                                  },
+                                                  expression:
+                                                    "isShowDatePicker.birth"
+                                                }
+                                              },
+                                              [
+                                                _vm._v(" "),
+                                                _c("v-date-picker", {
+                                                  on: {
+                                                    input: function($event) {
+                                                      _vm.isShowDatePicker.birth = false
+                                                    }
+                                                  },
+                                                  model: {
+                                                    value: _vm.date.birth,
+                                                    callback: function($$v) {
+                                                      _vm.$set(
+                                                        _vm.date,
+                                                        "birth",
+                                                        $$v
+                                                      )
+                                                    },
+                                                    expression: "date.birth"
+                                                  }
+                                                })
+                                              ],
+                                              1
+                                            )
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-col",
+                                          { attrs: { cols: "12" } },
+                                          [
+                                            _c("ValidationProvider", {
+                                              attrs: {
+                                                name: "備考",
+                                                rules: "required"
+                                              },
+                                              scopedSlots: _vm._u(
+                                                [
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var errors = ref.errors
+                                                      return [
+                                                        _c("v-textarea", {
+                                                          attrs: {
+                                                            label: "備考",
+                                                            "error-messages":
+                                                              errors[0]
+                                                          },
+                                                          model: {
+                                                            value: _vm.remarks,
+                                                            callback: function(
+                                                              $$v
+                                                            ) {
+                                                              _vm.remarks = $$v
+                                                            },
+                                                            expression:
+                                                              "remarks"
+                                                          }
+                                                        })
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                null,
+                                                true
+                                              )
+                                            })
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-card-actions",
+                              { staticClass: "justify-center" },
+                              [
+                                _c(
+                                  "v-btn",
+                                  {
+                                    staticClass: "col-5",
+                                    attrs: { color: "blue", dark: "" },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.register(validate)
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("登録")]
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    }
+                  }
+                ])
+              })
+            ],
+            1
+          )
+        ],
         1
       )
     ],
@@ -8273,6 +9537,296 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib/index.js?!./resources/ts/views/admin/SkillList.vue?vue&type=template&id=439aa594&":
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./resources/ts/views/admin/SkillList.vue?vue&type=template&id=439aa594& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-container",
+    { attrs: { fluid: "" } },
+    [
+      _c(
+        "v-dialog",
+        {
+          attrs: { "max-width": "290" },
+          model: {
+            value: _vm.createSkillDialog,
+            callback: function($$v) {
+              _vm.createSkillDialog = $$v
+            },
+            expression: "createSkillDialog"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-card-title", { staticClass: "headline" }, [
+                _vm._v("スキル新規作成")
+              ]),
+              _vm._v(" "),
+              _c("v-text-field", {
+                attrs: { label: "スキル名" },
+                model: {
+                  value: _vm.skillName,
+                  callback: function($$v) {
+                    _vm.skillName = $$v
+                  },
+                  expression: "skillName"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "green darken-1", text: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.createSkillDialog = false
+                        }
+                      }
+                    },
+                    [_vm._v("キャンセル")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "green darken-1", text: "" },
+                      on: { click: _vm.createSkill }
+                    },
+                    [_vm._v("作成")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { "max-width": "290" },
+          model: {
+            value: _vm.updateSkillDialog,
+            callback: function($$v) {
+              _vm.updateSkillDialog = $$v
+            },
+            expression: "updateSkillDialog"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-card-title", { staticClass: "headline" }, [
+                _vm._v("スキル名の更新")
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                [
+                  _c("v-text-field", {
+                    attrs: { label: "スキル名" },
+                    model: {
+                      value: _vm.willUpdateSkillName,
+                      callback: function($$v) {
+                        _vm.willUpdateSkillName = $$v
+                      },
+                      expression: "willUpdateSkillName"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "green darken-1", text: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.updateSkillDialog = false
+                        }
+                      }
+                    },
+                    [_vm._v("キャンセル")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "green darken-1", text: "" },
+                      on: { click: _vm.updateSkill }
+                    },
+                    [_vm._v("更新")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { "max-width": "290" },
+          model: {
+            value: _vm.deleteSkillDialog,
+            callback: function($$v) {
+              _vm.deleteSkillDialog = $$v
+            },
+            expression: "deleteSkillDialog"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-card-title", { staticClass: "headline" }, [
+                _vm._v("本当に削除してもいいですか。")
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "green darken-1", text: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.deleteSkillDialog = false
+                        }
+                      }
+                    },
+                    [_vm._v("キャンセル")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "green darken-1", text: "" },
+                      on: { click: _vm.deleteSkill }
+                    },
+                    [_vm._v("確定")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "material-card",
+        { attrs: { color: "green", title: "スキル一覧" } },
+        _vm._l(_vm.skillGroup, function(skills) {
+          return _c(
+            "v-card",
+            { key: skills.name, staticClass: "mb-4" },
+            [
+              _c(
+                "v-card-title",
+                [
+                  _c("span", [_vm._v(_vm._s(skills.name) + "一覧")]),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { text: "", icon: "", color: "deep-orange" },
+                      on: {
+                        click: function($event) {
+                          return _vm.showCreateSkillDialog(
+                            _vm.SELECTED_SKILL_MODE[skills.nameEn]
+                          )
+                        }
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("mdi-folder-plus")])],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-text",
+                _vm._l(skills.items, function(skill) {
+                  return _c(
+                    "v-chip",
+                    {
+                      key: skill.id,
+                      staticClass: "ma-2",
+                      attrs: { close: "" },
+                      on: {
+                        dblclick: function($event) {
+                          return _vm.showUpdateSkillDialog(
+                            skill.id,
+                            _vm.SELECTED_SKILL_MODE[skills.nameEn],
+                            skill.name
+                          )
+                        },
+                        "click:close": function($event) {
+                          return _vm.showDeleteSkillDialog(
+                            skill.id,
+                            _vm.SELECTED_SKILL_MODE[skills.nameEn]
+                          )
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(skill.name))]
+                  )
+                }),
+                1
+              )
+            ],
+            1
+          )
+        }),
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib/index.js?!./resources/ts/views/admin/employeeProfile/index.vue?vue&type=template&id=71f639a5&":
 /*!*********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib??vue-loader-options!./resources/ts/views/admin/employeeProfile/index.vue?vue&type=template&id=71f639a5& ***!
@@ -8292,6 +9846,156 @@ var render = function() {
     "v-container",
     { attrs: { fluid: "" } },
     [
+      _c(
+        "v-dialog",
+        {
+          attrs: { "max-width": "290" },
+          model: {
+            value: _vm.createExperienceDialog,
+            callback: function($$v) {
+              _vm.createExperienceDialog = $$v
+            },
+            expression: "createExperienceDialog"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-select", {
+                attrs: {
+                  label: "経験スキル",
+                  items: _vm.experienceSkills,
+                  "item-text": "name",
+                  "item-value": "id"
+                },
+                model: {
+                  value: _vm.experienceSkillId,
+                  callback: function($$v) {
+                    _vm.experienceSkillId = $$v
+                  },
+                  expression: "experienceSkillId"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-select", {
+                attrs: {
+                  label: "経験期間",
+                  items: _vm.experiencePeriods,
+                  "item-text": "name",
+                  "item-value": "id"
+                },
+                model: {
+                  value: _vm.experiencePeriodId,
+                  callback: function($$v) {
+                    _vm.experiencePeriodId = $$v
+                  },
+                  expression: "experiencePeriodId"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "green darken-1", text: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.createExperienceDialog = false
+                        }
+                      }
+                    },
+                    [_vm._v("キャンセル")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "green darken-1", text: "" },
+                      on: { click: _vm.createExperience }
+                    },
+                    [_vm._v("作成")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { "max-width": "290" },
+          model: {
+            value: _vm.updateExperiencePeriodDialog,
+            callback: function($$v) {
+              _vm.updateExperiencePeriodDialog = $$v
+            },
+            expression: "updateExperiencePeriodDialog"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-select", {
+                attrs: {
+                  label: "経験期間",
+                  items: _vm.experiencePeriods,
+                  "item-text": "name",
+                  "item-value": "id"
+                },
+                model: {
+                  value: _vm.experiencePeriodId,
+                  callback: function($$v) {
+                    _vm.experiencePeriodId = $$v
+                  },
+                  expression: "experiencePeriodId"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "green darken-1", text: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.updateExperiencePeriodDialog = false
+                        }
+                      }
+                    },
+                    [_vm._v("キャンセル")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "green darken-1", text: "" },
+                      on: { click: _vm.updateExperiencePeriod }
+                    },
+                    [_vm._v("更新")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
       _c(
         "v-col",
         { attrs: { cols: "12" } },
@@ -8392,7 +10096,8 @@ var render = function() {
                           staticClass: "justify-self-end",
                           attrs: {
                             to: { name: "Employee Profile Update" },
-                            color: "success"
+                            color: "green",
+                            dark: ""
                           }
                         },
                         [_vm._v("プロフィール更新")]
@@ -8401,6 +10106,597 @@ var render = function() {
                     1
                   )
                 : _vm._e()
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-col",
+        { attrs: { cols: "12" } },
+        [
+          _c(
+            "material-card",
+            { attrs: { color: "green", title: "スキル一覧" } },
+            [
+              _c(
+                "v-card-text",
+                [
+                  _c(
+                    "material-card",
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "d-flex align-center" },
+                        [
+                          _c("v-subheader", { staticClass: "title" }, [
+                            _vm._v("言語")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                text: "",
+                                icon: "",
+                                color: "deep-orange"
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.showCreateExperienceDialog(
+                                    _vm.SELECTED_SKILL_MODE.language
+                                  )
+                                }
+                              }
+                            },
+                            [_c("v-icon", [_vm._v("mdi-folder-plus")])],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-item-group",
+                        { attrs: { readonly: "" } },
+                        _vm._l(_vm.employee.language_experiences, function(
+                          experience,
+                          i
+                        ) {
+                          return _c(
+                            "v-list-item",
+                            { key: i },
+                            [
+                              _c(
+                                "v-row",
+                                {
+                                  attrs: { align: "center", justify: "start" }
+                                },
+                                [
+                                  _c("v-col", { attrs: { cols: "2" } }, [
+                                    _c("p", { staticClass: "mb-0" }, [
+                                      _vm._v(_vm._s(experience.language.name))
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("v-col", { staticClass: "d-flex" }, [
+                                    _c("input", {
+                                      staticClass: "noTouch",
+                                      attrs: {
+                                        type: "radio",
+                                        name: "languageExperience" + i,
+                                        value: "半年未満"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 1
+                                      }
+                                    }),
+                                    _vm._v("半年未満\n                  "),
+                                    _c("input", {
+                                      staticClass: "noTouch",
+                                      attrs: {
+                                        type: "radio",
+                                        name: "languageExperience" + i,
+                                        value: "半年から1年"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 2
+                                      }
+                                    }),
+                                    _vm._v("半年から1年\n                  "),
+                                    _c("input", {
+                                      staticClass: "noTouch",
+                                      attrs: {
+                                        type: "radio",
+                                        name: "languageExperience" + i,
+                                        value: "1年から2年"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 3
+                                      }
+                                    }),
+                                    _vm._v("1年から2年\n                  "),
+                                    _c("input", {
+                                      attrs: {
+                                        type: "radio",
+                                        name: "languageExperience" + i,
+                                        value: "2年から3年"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 4
+                                      }
+                                    }),
+                                    _vm._v("2年から3年\n                  "),
+                                    _c("input", {
+                                      attrs: {
+                                        type: "radio",
+                                        name: "languageExperience" + i,
+                                        value: "3年以上"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 5
+                                      }
+                                    }),
+                                    _vm._v("3年以上\n                ")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    {
+                                      staticClass: "d-flex",
+                                      attrs: { cols: "1" }
+                                    },
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: {
+                                            text: "",
+                                            icon: "",
+                                            color: "deep-orange"
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.showUpdateExperiencePeriodDialog(
+                                                experience.id,
+                                                _vm.SELECTED_SKILL_MODE.language
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("v-icon", [_vm._v("mdi-calendar")])
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: {
+                                            text: "",
+                                            icon: "",
+                                            color: "deep-orange"
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.showDeleteExperienceDialog(
+                                                experience.id,
+                                                _vm.SELECTED_SKILL_MODE.language
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [_c("v-icon", [_vm._v("mdi-delete")])],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        }),
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "material-card",
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "d-flex align-center" },
+                        [
+                          _c("v-subheader", { staticClass: "title" }, [
+                            _vm._v("フレームワーク")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                text: "",
+                                icon: "",
+                                color: "deep-orange"
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.showCreateExperienceDialog(
+                                    _vm.SELECTED_SKILL_MODE.framework
+                                  )
+                                }
+                              }
+                            },
+                            [_c("v-icon", [_vm._v("mdi-folder-plus")])],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-item-group",
+                        { attrs: { readonly: "" } },
+                        _vm._l(_vm.employee.framework_experiences, function(
+                          experience,
+                          i
+                        ) {
+                          return _c(
+                            "v-list-item",
+                            { key: i },
+                            [
+                              _c(
+                                "v-row",
+                                {
+                                  attrs: { align: "center", justify: "start" }
+                                },
+                                [
+                                  _c("v-col", { attrs: { cols: "2" } }, [
+                                    _c("p", { staticClass: "mb-0" }, [
+                                      _vm._v(_vm._s(experience.framework.name))
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("v-col", { staticClass: "d-flex" }, [
+                                    _c("input", {
+                                      staticClass: "noTouch",
+                                      attrs: {
+                                        type: "radio",
+                                        name: "frameworkExperience" + i,
+                                        value: "半年未満"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 1
+                                      }
+                                    }),
+                                    _vm._v("半年未満\n                  "),
+                                    _c("input", {
+                                      staticClass: "noTouch",
+                                      attrs: {
+                                        type: "radio",
+                                        name: "frameworkExperience" + i,
+                                        value: "半年から1年"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 2
+                                      }
+                                    }),
+                                    _vm._v("半年から1年\n                  "),
+                                    _c("input", {
+                                      staticClass: "noTouch",
+                                      attrs: {
+                                        type: "radio",
+                                        name: "frameworkExperience" + i,
+                                        value: "1年から2年"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 3
+                                      }
+                                    }),
+                                    _vm._v("1年から2年\n                  "),
+                                    _c("input", {
+                                      attrs: {
+                                        type: "radio",
+                                        name: "frameworkExperience" + i,
+                                        value: "2年から3年"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 4
+                                      }
+                                    }),
+                                    _vm._v("2年から3年\n                  "),
+                                    _c("input", {
+                                      attrs: {
+                                        type: "radio",
+                                        name: "frameworkExperience" + i,
+                                        value: "3年以上"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 5
+                                      }
+                                    }),
+                                    _vm._v("3年以上\n                ")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    {
+                                      staticClass: "d-flex",
+                                      attrs: { cols: "1" }
+                                    },
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: {
+                                            text: "",
+                                            icon: "",
+                                            color: "deep-orange"
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.showUpdateExperiencePeriodDialog(
+                                                experience.id,
+                                                _vm.SELECTED_SKILL_MODE
+                                                  .framework
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("v-icon", [_vm._v("mdi-calendar")])
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: {
+                                            text: "",
+                                            icon: "",
+                                            color: "deep-orange"
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.showDeleteExperienceDialog(
+                                                experience.id,
+                                                _vm.SELECTED_SKILL_MODE
+                                                  .framework
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [_c("v-icon", [_vm._v("mdi-delete")])],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        }),
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "material-card",
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "d-flex align-center" },
+                        [
+                          _c("v-subheader", { staticClass: "title" }, [
+                            _vm._v("その他ツール")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                text: "",
+                                icon: "",
+                                color: "deep-orange"
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.showCreateExperienceDialog(
+                                    _vm.SELECTED_SKILL_MODE.otherTool
+                                  )
+                                }
+                              }
+                            },
+                            [_c("v-icon", [_vm._v("mdi-folder-plus")])],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-item-group",
+                        { attrs: { readonly: "" } },
+                        _vm._l(_vm.employee.other_tool_experiences, function(
+                          experience,
+                          i
+                        ) {
+                          return _c(
+                            "v-list-item",
+                            { key: i },
+                            [
+                              _c(
+                                "v-row",
+                                {
+                                  attrs: { align: "center", justify: "start" }
+                                },
+                                [
+                                  _c("v-col", { attrs: { cols: "2" } }, [
+                                    _c("p", { staticClass: "mb-0" }, [
+                                      _vm._v(_vm._s(experience.other_tool.name))
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("v-col", { staticClass: "d-flex" }, [
+                                    _c("input", {
+                                      staticClass: "noTouch",
+                                      attrs: {
+                                        type: "radio",
+                                        name: "otherToolExperience" + i,
+                                        value: "半年未満"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 1
+                                      }
+                                    }),
+                                    _vm._v("半年未満\n                  "),
+                                    _c("input", {
+                                      staticClass: "noTouch",
+                                      attrs: {
+                                        type: "radio",
+                                        name: "otherToolExperience" + i,
+                                        value: "半年から1年"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 2
+                                      }
+                                    }),
+                                    _vm._v("半年から1年\n                  "),
+                                    _c("input", {
+                                      staticClass: "noTouch",
+                                      attrs: {
+                                        type: "radio",
+                                        name: "otherToolExperience" + i,
+                                        value: "1年から2年"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 3
+                                      }
+                                    }),
+                                    _vm._v("1年から2年\n                  "),
+                                    _c("input", {
+                                      attrs: {
+                                        type: "radio",
+                                        name: "otherToolExperience" + i,
+                                        value: "2年から3年"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 4
+                                      }
+                                    }),
+                                    _vm._v("2年から3年\n                  "),
+                                    _c("input", {
+                                      attrs: {
+                                        type: "radio",
+                                        name: "otherToolExperience" + i,
+                                        value: "3年以上"
+                                      },
+                                      domProps: {
+                                        checked:
+                                          experience.experience_period_id === 5
+                                      }
+                                    }),
+                                    _vm._v("3年以上\n                ")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    {
+                                      staticClass: "d-flex",
+                                      attrs: { cols: "1" }
+                                    },
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: {
+                                            text: "",
+                                            icon: "",
+                                            color: "deep-orange"
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.showUpdateExperiencePeriodDialog(
+                                                experience.id,
+                                                _vm.SELECTED_SKILL_MODE
+                                                  .otherTool
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("v-icon", [_vm._v("mdi-calendar")])
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: {
+                                            text: "",
+                                            icon: "",
+                                            color: "deep-orange"
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.showDeleteExperienceDialog(
+                                                experience.id,
+                                                _vm.SELECTED_SKILL_MODE
+                                                  .otherTool
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [_c("v-icon", [_vm._v("mdi-delete")])],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        }),
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
             ],
             1
           )
@@ -8454,35 +10750,95 @@ var render = function() {
                       _c(
                         "v-col",
                         { attrs: { cols: "12", md: "6" } },
-                        [_c("v-text-field", { attrs: { label: "姓" } })],
+                        [
+                          _c("v-text-field", {
+                            attrs: { label: "姓" },
+                            model: {
+                              value: _vm.lastName,
+                              callback: function($$v) {
+                                _vm.lastName = $$v
+                              },
+                              expression: "lastName"
+                            }
+                          })
+                        ],
                         1
                       ),
                       _vm._v(" "),
                       _c(
                         "v-col",
                         { attrs: { cols: "12", md: "6" } },
-                        [_c("v-text-field", { attrs: { label: "名" } })],
+                        [
+                          _c("v-text-field", {
+                            attrs: { label: "名" },
+                            model: {
+                              value: _vm.firstName,
+                              callback: function($$v) {
+                                _vm.firstName = $$v
+                              },
+                              expression: "firstName"
+                            }
+                          })
+                        ],
                         1
                       ),
                       _vm._v(" "),
                       _c(
                         "v-col",
                         { attrs: { cols: "12", md: "6" } },
-                        [_c("v-text-field", { attrs: { label: "姓(カナ)" } })],
+                        [
+                          _c("v-text-field", {
+                            attrs: { label: "姓(カナ)" },
+                            model: {
+                              value: _vm.lastNameKana,
+                              callback: function($$v) {
+                                _vm.lastNameKana = $$v
+                              },
+                              expression: "lastNameKana"
+                            }
+                          })
+                        ],
                         1
                       ),
                       _vm._v(" "),
                       _c(
                         "v-col",
                         { attrs: { cols: "12", md: "6" } },
-                        [_c("v-text-field", { attrs: { label: "名(カナ)" } })],
+                        [
+                          _c("v-text-field", {
+                            attrs: { label: "名(カナ)" },
+                            model: {
+                              value: _vm.firstNameKana,
+                              callback: function($$v) {
+                                _vm.firstNameKana = $$v
+                              },
+                              expression: "firstNameKana"
+                            }
+                          })
+                        ],
                         1
                       ),
                       _vm._v(" "),
                       _c(
                         "v-col",
                         { attrs: { cols: "12", md: "4" } },
-                        [_c("v-text-field", { attrs: { label: "役職" } })],
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              label: "役職",
+                              items: _vm.jobTitles,
+                              "item-text": "name",
+                              "item-value": "id"
+                            },
+                            model: {
+                              value: _vm.jobTitleId,
+                              callback: function($$v) {
+                                _vm.jobTitleId = $$v
+                              },
+                              expression: "jobTitleId"
+                            }
+                          })
+                        ],
                         1
                       ),
                       _vm._v(" "),
@@ -8514,11 +10870,11 @@ var render = function() {
                                               readonly: ""
                                             },
                                             model: {
-                                              value: _vm.date.hire,
+                                              value: _vm.hiredAt,
                                               callback: function($$v) {
-                                                _vm.$set(_vm.date, "hire", $$v)
+                                                _vm.hiredAt = $$v
                                               },
-                                              expression: "date.hire"
+                                              expression: "hiredAt"
                                             }
                                           },
                                           on
@@ -8545,11 +10901,11 @@ var render = function() {
                                   }
                                 },
                                 model: {
-                                  value: _vm.date.hire,
+                                  value: _vm.hiredAt,
                                   callback: function($$v) {
-                                    _vm.$set(_vm.date, "hire", $$v)
+                                    _vm.hiredAt = $$v
                                   },
-                                  expression: "date.hire"
+                                  expression: "hiredAt"
                                 }
                               })
                             ],
@@ -8587,11 +10943,11 @@ var render = function() {
                                               readonly: ""
                                             },
                                             model: {
-                                              value: _vm.date.birth,
+                                              value: _vm.birthAt,
                                               callback: function($$v) {
-                                                _vm.$set(_vm.date, "birth", $$v)
+                                                _vm.birthAt = $$v
                                               },
-                                              expression: "date.birth"
+                                              expression: "birthAt"
                                             }
                                           },
                                           on
@@ -8618,11 +10974,11 @@ var render = function() {
                                   }
                                 },
                                 model: {
-                                  value: _vm.date.birth,
+                                  value: _vm.birthAt,
                                   callback: function($$v) {
-                                    _vm.$set(_vm.date, "birth", $$v)
+                                    _vm.birthAt = $$v
                                   },
-                                  expression: "date.birth"
+                                  expression: "birthAt"
                                 }
                               })
                             ],
@@ -8657,10 +11013,7 @@ var render = function() {
                           _c(
                             "v-btn",
                             {
-                              attrs: {
-                                to: { name: "Employee Profile" },
-                                color: "success"
-                              },
+                              attrs: { color: "green", dark: "" },
                               on: { click: _vm.updateProfile }
                             },
                             [_vm._v("更新確定")]
@@ -8802,7 +11155,7 @@ var render = function() {
                 [
                   _c(
                     "v-toolbar",
-                    { attrs: { color: "primary", dark: "", flat: "" } },
+                    { attrs: { color: "blue", dark: "", flat: "" } },
                     [_c("v-toolbar-title", [_vm._v("ログインフォーム")])],
                     1
                   ),
@@ -8860,7 +11213,7 @@ var render = function() {
                       _c(
                         "v-btn",
                         {
-                          attrs: { color: "primary" },
+                          attrs: { color: "blue", dark: "" },
                           on: { click: _vm.login }
                         },
                         [_vm._v("ログイン")]
@@ -68107,6 +70460,274 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/lib/components/VFileInput/VFileInput.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VFileInput/VFileInput.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_components_VFileInput_VFileInput_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../src/components/VFileInput/VFileInput.sass */ "./node_modules/vuetify/src/components/VFileInput/VFileInput.sass");
+/* harmony import */ var _src_components_VFileInput_VFileInput_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VFileInput_VFileInput_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _VTextField__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
+/* harmony import */ var _VChip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VChip */ "./node_modules/vuetify/lib/components/VChip/index.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/helpers */ "./node_modules/vuetify/lib/util/helpers.js");
+/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/console */ "./node_modules/vuetify/lib/util/console.js");
+// Styles
+ // Extensions
+
+ // Components
+
+ // Utilities
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].extend({
+  name: 'v-file-input',
+  model: {
+    prop: 'value',
+    event: 'change'
+  },
+  props: {
+    chips: Boolean,
+    clearable: {
+      type: Boolean,
+      default: true
+    },
+    counterSizeString: {
+      type: String,
+      default: '$vuetify.fileInput.counterSize'
+    },
+    counterString: {
+      type: String,
+      default: '$vuetify.fileInput.counter'
+    },
+    placeholder: String,
+    prependIcon: {
+      type: String,
+      default: '$file'
+    },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    showSize: {
+      type: [Boolean, Number],
+      default: false,
+      validator: v => {
+        return typeof v === 'boolean' || [1000, 1024].includes(v);
+      }
+    },
+    smallChips: Boolean,
+    truncateLength: {
+      type: [Number, String],
+      default: 22
+    },
+    type: {
+      type: String,
+      default: 'file'
+    },
+    value: {
+      default: () => [],
+      validator: val => {
+        return typeof val === 'object' || Array.isArray(val);
+      }
+    }
+  },
+  computed: {
+    classes() {
+      return { ..._VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this),
+        'v-file-input': true
+      };
+    },
+
+    counterValue() {
+      const fileCount = this.isMultiple && this.lazyValue ? this.lazyValue.length : this.lazyValue instanceof File ? 1 : 0;
+      if (!this.showSize) return this.$vuetify.lang.t(this.counterString, fileCount);
+      const bytes = this.internalArrayValue.reduce((size, file) => size + file.size, 0);
+      return this.$vuetify.lang.t(this.counterSizeString, fileCount, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["humanReadableFileSize"])(bytes, this.base === 1024));
+    },
+
+    internalArrayValue() {
+      return Array.isArray(this.internalValue) ? this.internalValue : Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["wrapInArray"])(this.internalValue);
+    },
+
+    internalValue: {
+      get() {
+        return this.lazyValue;
+      },
+
+      set(val) {
+        this.lazyValue = val;
+        this.$emit('change', this.lazyValue);
+      }
+
+    },
+
+    isDirty() {
+      return this.internalArrayValue.length > 0;
+    },
+
+    isLabelActive() {
+      return this.isDirty;
+    },
+
+    isMultiple() {
+      return this.$attrs.hasOwnProperty('multiple');
+    },
+
+    text() {
+      if (!this.isDirty) return [this.placeholder];
+      return this.internalArrayValue.map(file => {
+        const name = this.truncateText(file.name);
+        return !this.showSize ? name : `${name} (${Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["humanReadableFileSize"])(file.size, this.base === 1024)})`;
+      });
+    },
+
+    base() {
+      return typeof this.showSize !== 'boolean' ? this.showSize : undefined;
+    },
+
+    hasChips() {
+      return this.chips || this.smallChips;
+    }
+
+  },
+  watch: {
+    readonly: {
+      handler(v) {
+        if (v === true) Object(_util_console__WEBPACK_IMPORTED_MODULE_4__["consoleError"])('readonly is not supported on <v-file-input>', this);
+      },
+
+      immediate: true
+    }
+  },
+  methods: {
+    clearableCallback() {
+      this.internalValue = this.isMultiple ? [] : null;
+      this.$refs.input.value = '';
+    },
+
+    genChips() {
+      if (!this.isDirty) return [];
+      return this.text.map((text, index) => this.$createElement(_VChip__WEBPACK_IMPORTED_MODULE_2__["VChip"], {
+        props: {
+          small: this.smallChips
+        },
+        on: {
+          'click:close': () => {
+            const internalValue = this.internalValue;
+            internalValue.splice(index, 1);
+            this.internalValue = internalValue; // Trigger the watcher
+          }
+        }
+      }, [text]));
+    },
+
+    genInput() {
+      const input = _VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.genInput.call(this); // We should not be setting value
+      // programmatically on the input
+      // when it is using type="file"
+
+      delete input.data.domProps.value; // This solves an issue in Safari where
+      // nothing happens when adding a file
+      // do to the input event not firing
+      // https://github.com/vuetifyjs/vuetify/issues/7941
+
+      delete input.data.on.input;
+      input.data.on.change = this.onInput;
+      return [this.genSelections(), input];
+    },
+
+    genPrependSlot() {
+      if (!this.prependIcon) return null;
+      const icon = this.genIcon('prepend', () => {
+        this.$refs.input.click();
+      });
+      return this.genSlot('prepend', 'outer', [icon]);
+    },
+
+    genSelectionText() {
+      const length = this.text.length;
+      if (length < 2) return this.text;
+      if (this.showSize && !this.counter) return [this.counterValue];
+      return [this.$vuetify.lang.t(this.counterString, length)];
+    },
+
+    genSelections() {
+      const children = [];
+
+      if (this.isDirty && this.$scopedSlots.selection) {
+        this.internalArrayValue.forEach((file, index) => {
+          if (!this.$scopedSlots.selection) return;
+          children.push(this.$scopedSlots.selection({
+            text: this.text[index],
+            file,
+            index
+          }));
+        });
+      } else {
+        children.push(this.hasChips && this.isDirty ? this.genChips() : this.genSelectionText());
+      }
+
+      return this.$createElement('div', {
+        staticClass: 'v-file-input__text',
+        class: {
+          'v-file-input__text--placeholder': this.placeholder && !this.isDirty,
+          'v-file-input__text--chips': this.hasChips && !this.$scopedSlots.selection
+        },
+        on: {
+          click: () => this.$refs.input.click()
+        }
+      }, children);
+    },
+
+    onInput(e) {
+      const files = [...(e.target.files || [])];
+      this.internalValue = this.isMultiple ? files : files[0]; // Set initialValue here otherwise isFocused
+      // watcher in VTextField will emit a change
+      // event whenever the component is blurred
+
+      this.initialValue = this.internalValue;
+    },
+
+    onKeyDown(e) {
+      this.$emit('keydown', e);
+    },
+
+    truncateText(str) {
+      if (str.length < Number(this.truncateLength)) return str;
+      const charsKeepOneSide = Math.floor((Number(this.truncateLength) - 1) / 2);
+      return `${str.slice(0, charsKeepOneSide)}…${str.slice(str.length - charsKeepOneSide)}`;
+    }
+
+  }
+}));
+//# sourceMappingURL=VFileInput.js.map
+
+/***/ }),
+
+/***/ "./node_modules/vuetify/lib/components/VFileInput/index.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/vuetify/lib/components/VFileInput/index.js ***!
+  \*****************************************************************/
+/*! exports provided: VFileInput, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VFileInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VFileInput */ "./node_modules/vuetify/lib/components/VFileInput/VFileInput.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VFileInput", function() { return _VFileInput__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_VFileInput__WEBPACK_IMPORTED_MODULE_0__["default"]);
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/lib/components/VForm/VForm.js":
 /*!************************************************************!*\
   !*** ./node_modules/vuetify/lib/components/VForm/VForm.js ***!
@@ -80199,6 +82820,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/vuetify/src/components/VFileInput/VFileInput.sass":
+/*!************************************************************************!*\
+  !*** ./node_modules/vuetify/src/components/VFileInput/VFileInput.sass ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../css-loader!../../../../postcss-loader/src??ref--10-2!../../../../sass-loader/dist/cjs.js??ref--10-3!./VFileInput.sass */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vuetify/src/components/VFileInput/VFileInput.sass");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/vuetify/src/components/VGrid/VGrid.sass":
 /*!**************************************************************!*\
   !*** ./node_modules/vuetify/src/components/VGrid/VGrid.sass ***!
@@ -82719,17 +85370,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const vue_1 = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 const bootstrap_1 = __webpack_require__(/*! ./bootstrap */ "./resources/ts/bootstrap.ts");
 const App_vue_1 = __webpack_require__(/*! ./components/App.vue */ "./resources/ts/components/App.vue");
-const vee_validate_1 = __webpack_require__(/*! vee-validate */ "./node_modules/vee-validate/dist/vee-validate.esm.js");
-const rules = __webpack_require__(/*! vee-validate/dist/rules */ "./node_modules/vee-validate/dist/rules.js");
-const ja = __webpack_require__(/*! vee-validate/dist/locale/ja */ "./node_modules/vee-validate/dist/locale/ja.json");
-const vuetify_1 = __webpack_require__(/*! ./plugins/vuetify */ "./resources/ts/plugins/vuetify.ts");
-const index_1 = __webpack_require__(/*! ./router/index */ "./resources/ts/router/index.ts");
 const store_1 = __webpack_require__(/*! ./store */ "./resources/ts/store/index.ts");
+const index_1 = __webpack_require__(/*! ./router/index */ "./resources/ts/router/index.ts");
 __webpack_require__(/*! ./plugins */ "./resources/ts/plugins/index.ts");
+const vuetify_1 = __webpack_require__(/*! ./plugins/vuetify */ "./resources/ts/plugins/vuetify.ts");
 bootstrap_1.default();
-for (let rule in rules) {
-    vee_validate_1.extend(rule, Object.assign(Object.assign({}, rules[rule]), { message: ja.messages[rule] }));
-}
 new vue_1.default({
     el: '#app',
     router: index_1.default,
@@ -83345,7 +85990,43 @@ vue_1.default.component(Card_vue_1.default.name, Card_vue_1.default);
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./veeValidate */ "./resources/ts/plugins/veeValidate.ts");
 __webpack_require__(/*! ./components */ "./resources/ts/plugins/components.ts");
+
+
+/***/ }),
+
+/***/ "./resources/ts/plugins/veeValidate.ts":
+/*!*********************************************!*\
+  !*** ./resources/ts/plugins/veeValidate.ts ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const vee_validate_1 = __webpack_require__(/*! vee-validate */ "./node_modules/vee-validate/dist/vee-validate.esm.js");
+const rules = __webpack_require__(/*! vee-validate/dist/rules */ "./node_modules/vee-validate/dist/rules.js");
+const ja = __webpack_require__(/*! vee-validate/dist/locale/ja */ "./node_modules/vee-validate/dist/locale/ja.json");
+for (let rule in rules) {
+    vee_validate_1.extend(rule, Object.assign(Object.assign({}, rules[rule]), { message: ja.messages[rule] }));
+}
+vee_validate_1.extend("uniqEmail", {
+    validate: async (email) => {
+        const params = new URLSearchParams();
+        params.append("email", email);
+        return window.axios.post(`/api/isUniqEmail`, params)
+            .then(response => {
+            return !response.data.exists;
+        })
+            .catch(error => {
+            console.warn(error);
+            return true;
+        });
+    },
+    message: "対象のメールアドレスは、既に存在しています。"
+});
 
 
 /***/ }),
@@ -83460,7 +86141,19 @@ const router = new vue_router_1.default({
                             meta: { requiresAuth: true },
                         },
                     ]
-                }
+                },
+                {
+                    path: "append-employee",
+                    name: "Append Employee",
+                    component: (resovle) => Promise.resolve().then(() => __webpack_require__(/*! @src/views/admin/EmployeeAppend.vue */ "./resources/ts/views/admin/EmployeeAppend.vue")).then(resovle),
+                    meta: { requiresAuth: true },
+                },
+                {
+                    path: "skill-list",
+                    name: "Skill List",
+                    component: (resovle) => Promise.resolve().then(() => __webpack_require__(/*! @src/views/admin/SkillList.vue */ "./resources/ts/views/admin/SkillList.vue")).then(resovle),
+                    meta: { requiresAuth: true },
+                },
             ]
         },
     ],
@@ -83487,7 +86180,14 @@ router.beforeEach((to, from, next) => {
         }
     }
     else {
-        next();
+        if (store_1.default.state.authenticationModule.isLogin) {
+            next({
+                name: 'Admin Wrapper'
+            });
+        }
+        else {
+            next();
+        }
     }
 });
 vue_1.default.use(vue_meta_1.default);
@@ -83552,12 +86252,16 @@ let App = class App extends vuex_module_decorators_1.VuexModule {
     constructor() {
         super(...arguments);
         this.drawer = true;
+        this.drawerLinks = [];
         this.color = 'success';
         this.image = 'https://demos.creative-tim.com/vue-material-dashboard/img/sidebar-2.32103624.jpg';
         this.isShowSnackbar = false;
     }
     setDrawer(drawer) {
         this.drawer = drawer;
+    }
+    setDrawerLinks(drawerLinks) {
+        this.drawerLinks = drawerLinks;
     }
     setColor(color) {
         this.color = color;
@@ -83572,6 +86276,9 @@ let App = class App extends vuex_module_decorators_1.VuexModule {
 __decorate([
     vuex_module_decorators_1.Mutation
 ], App.prototype, "setDrawer", null);
+__decorate([
+    vuex_module_decorators_1.Mutation
+], App.prototype, "setDrawerLinks", null);
 __decorate([
     vuex_module_decorators_1.Mutation
 ], App.prototype, "setColor", null);
@@ -83629,6 +86336,179 @@ AuthenticationModule = __decorate([
     vuex_module_decorators_1.Module({ name: 'authentication', namespaced: true })
 ], AuthenticationModule);
 exports.default = AuthenticationModule;
+
+
+/***/ }),
+
+/***/ "./resources/ts/store/modules/drawerLinks.ts":
+/*!***************************************************!*\
+  !*** ./resources/ts/store/modules/drawerLinks.ts ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const vuex_module_decorators_1 = __webpack_require__(/*! vuex-module-decorators */ "./node_modules/vuex-module-decorators/dist/esm/index.js");
+const index_1 = __webpack_require__(/*! ../index */ "./resources/ts/store/index.ts");
+let DrawerLinks = class DrawerLinks extends vuex_module_decorators_1.VuexModule {
+    constructor() {
+        super(...arguments);
+        this.drawerLinks = [];
+    }
+    setDrawerLinks(drawerLinks) {
+        this.drawerLinks = drawerLinks;
+    }
+};
+__decorate([
+    vuex_module_decorators_1.Mutation
+], DrawerLinks.prototype, "setDrawerLinks", null);
+DrawerLinks = __decorate([
+    vuex_module_decorators_1.Module({ dynamic: true, store: index_1.default, name: 'drawerLinks', namespaced: true })
+], DrawerLinks);
+exports.DrawerLinksModule = vuex_module_decorators_1.getModule(DrawerLinks);
+
+
+/***/ }),
+
+/***/ "./resources/ts/store/modules/email.ts":
+/*!*********************************************!*\
+  !*** ./resources/ts/store/modules/email.ts ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const vuex_module_decorators_1 = __webpack_require__(/*! vuex-module-decorators */ "./node_modules/vuex-module-decorators/dist/esm/index.js");
+const index_1 = __webpack_require__(/*! ../index */ "./resources/ts/store/index.ts");
+let Email = class Email extends vuex_module_decorators_1.VuexModule {
+    constructor() {
+        super(...arguments);
+        this.emails = [];
+    }
+    setEmails(emails) {
+        this.emails = emails;
+    }
+};
+__decorate([
+    vuex_module_decorators_1.Mutation
+], Email.prototype, "setEmails", null);
+Email = __decorate([
+    vuex_module_decorators_1.Module({ dynamic: true, store: index_1.default, name: 'email', namespaced: true })
+], Email);
+exports.EmailModule = vuex_module_decorators_1.getModule(Email);
+
+
+/***/ }),
+
+/***/ "./resources/ts/store/modules/jobTitles.ts":
+/*!*************************************************!*\
+  !*** ./resources/ts/store/modules/jobTitles.ts ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const vuex_module_decorators_1 = __webpack_require__(/*! vuex-module-decorators */ "./node_modules/vuex-module-decorators/dist/esm/index.js");
+const index_1 = __webpack_require__(/*! ../index */ "./resources/ts/store/index.ts");
+let JobTitles = class JobTitles extends vuex_module_decorators_1.VuexModule {
+    constructor() {
+        super(...arguments);
+        this.jobTitles = [];
+    }
+    setJobTitles(jobTitles) {
+        this.jobTitles = jobTitles;
+    }
+};
+__decorate([
+    vuex_module_decorators_1.Mutation
+], JobTitles.prototype, "setJobTitles", null);
+JobTitles = __decorate([
+    vuex_module_decorators_1.Module({ dynamic: true, store: index_1.default, name: 'skill', namespaced: true })
+], JobTitles);
+exports.JobTitlesModule = vuex_module_decorators_1.getModule(JobTitles);
+
+
+/***/ }),
+
+/***/ "./resources/ts/store/modules/skill.ts":
+/*!*********************************************!*\
+  !*** ./resources/ts/store/modules/skill.ts ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const vuex_module_decorators_1 = __webpack_require__(/*! vuex-module-decorators */ "./node_modules/vuex-module-decorators/dist/esm/index.js");
+const index_1 = __webpack_require__(/*! ../index */ "./resources/ts/store/index.ts");
+let Skill = class Skill extends vuex_module_decorators_1.VuexModule {
+    constructor() {
+        super(...arguments);
+        this.experiencePeriods = [];
+        this.languages = [];
+        this.frameworks = [];
+        this.otherTools = [];
+    }
+    setExperiencePeriods(experiencePeriods) {
+        this.experiencePeriods = experiencePeriods;
+    }
+    setLanguages(languages) {
+        this.languages = languages;
+    }
+    setFrameworks(frameworks) {
+        this.frameworks = frameworks;
+    }
+    setOtherTools(otherTools) {
+        this.otherTools = otherTools;
+    }
+};
+__decorate([
+    vuex_module_decorators_1.Mutation
+], Skill.prototype, "setExperiencePeriods", null);
+__decorate([
+    vuex_module_decorators_1.Mutation
+], Skill.prototype, "setLanguages", null);
+__decorate([
+    vuex_module_decorators_1.Mutation
+], Skill.prototype, "setFrameworks", null);
+__decorate([
+    vuex_module_decorators_1.Mutation
+], Skill.prototype, "setOtherTools", null);
+Skill = __decorate([
+    vuex_module_decorators_1.Module({ dynamic: true, store: index_1.default, name: 'skill', namespaced: true })
+], Skill);
+exports.SkillModule = vuex_module_decorators_1.getModule(Skill);
 
 
 /***/ }),
@@ -83709,6 +86589,115 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminWrapper_vue_vue_type_template_id_5b8628ed___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_AdminWrapper_vue_vue_type_template_id_5b8628ed___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/ts/views/admin/EmployeeAppend.vue":
+/*!*****************************************************!*\
+  !*** ./resources/ts/views/admin/EmployeeAppend.vue ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _EmployeeAppend_vue_vue_type_template_id_05928bd1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EmployeeAppend.vue?vue&type=template&id=05928bd1& */ "./resources/ts/views/admin/EmployeeAppend.vue?vue&type=template&id=05928bd1&");
+/* harmony import */ var _EmployeeAppend_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EmployeeAppend.vue?vue&type=script&lang=ts& */ "./resources/ts/views/admin/EmployeeAppend.vue?vue&type=script&lang=ts&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _EmployeeAppend_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _EmployeeAppend_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vuetify-loader/lib/runtime/installComponents.js */ "./node_modules/vuetify-loader/lib/runtime/installComponents.js");
+/* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VBtn */ "./node_modules/vuetify/lib/components/VBtn/index.js");
+/* harmony import */ var vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VCard */ "./node_modules/vuetify/lib/components/VCard/index.js");
+/* harmony import */ var vuetify_lib_components_VCheckbox__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VCheckbox */ "./node_modules/vuetify/lib/components/VCheckbox/index.js");
+/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/index.js");
+/* harmony import */ var vuetify_lib_components_VDatePicker__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VDatePicker */ "./node_modules/vuetify/lib/components/VDatePicker/index.js");
+/* harmony import */ var vuetify_lib_components_VFileInput__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VFileInput */ "./node_modules/vuetify/lib/components/VFileInput/index.js");
+/* harmony import */ var vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuetify/lib/components/VForm */ "./node_modules/vuetify/lib/components/VForm/index.js");
+/* harmony import */ var vuetify_lib_components_VMenu__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vuetify/lib/components/VMenu */ "./node_modules/vuetify/lib/components/VMenu/index.js");
+/* harmony import */ var vuetify_lib_components_VRadioGroup__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vuetify/lib/components/VRadioGroup */ "./node_modules/vuetify/lib/components/VRadioGroup/index.js");
+/* harmony import */ var vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vuetify/lib/components/VSelect */ "./node_modules/vuetify/lib/components/VSelect/index.js");
+/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
+/* harmony import */ var vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! vuetify/lib/components/VTextarea */ "./node_modules/vuetify/lib/components/VTextarea/index.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _EmployeeAppend_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _EmployeeAppend_vue_vue_type_template_id_05928bd1___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _EmployeeAppend_vue_vue_type_template_id_05928bd1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* vuetify-loader */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__["VBtn"],VCardActions: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardActions"],VCardText: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardText"],VCheckbox: vuetify_lib_components_VCheckbox__WEBPACK_IMPORTED_MODULE_6__["VCheckbox"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VCol"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VContainer"],VDatePicker: vuetify_lib_components_VDatePicker__WEBPACK_IMPORTED_MODULE_8__["VDatePicker"],VFileInput: vuetify_lib_components_VFileInput__WEBPACK_IMPORTED_MODULE_9__["VFileInput"],VFlex: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VFlex"],VForm: vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_10__["VForm"],VLayout: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VLayout"],VMenu: vuetify_lib_components_VMenu__WEBPACK_IMPORTED_MODULE_11__["VMenu"],VRadio: vuetify_lib_components_VRadioGroup__WEBPACK_IMPORTED_MODULE_12__["VRadio"],VRadioGroup: vuetify_lib_components_VRadioGroup__WEBPACK_IMPORTED_MODULE_12__["VRadioGroup"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VRow"],VSelect: vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_13__["VSelect"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_14__["VTextField"],VTextarea: vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_15__["VTextarea"]})
+
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/ts/views/admin/EmployeeAppend.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/ts/views/admin/EmployeeAppend.vue?vue&type=script&lang=ts&":
+/*!******************************************************************************!*\
+  !*** ./resources/ts/views/admin/EmployeeAppend.vue?vue&type=script&lang=ts& ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_ts_loader_index_js_ref_5_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_EmployeeAppend_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/ts-loader??ref--5!../../../../node_modules/vuetify-loader/lib/loader.js!../../../../node_modules/vue-loader/lib??vue-loader-options!./EmployeeAppend.vue?vue&type=script&lang=ts& */ "./node_modules/ts-loader/index.js?!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib/index.js?!./resources/ts/views/admin/EmployeeAppend.vue?vue&type=script&lang=ts&");
+/* harmony import */ var _node_modules_ts_loader_index_js_ref_5_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_EmployeeAppend_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_ts_loader_index_js_ref_5_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_EmployeeAppend_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_ts_loader_index_js_ref_5_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_EmployeeAppend_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_ts_loader_index_js_ref_5_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_EmployeeAppend_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_ts_loader_index_js_ref_5_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_EmployeeAppend_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/ts/views/admin/EmployeeAppend.vue?vue&type=template&id=05928bd1&":
+/*!************************************************************************************!*\
+  !*** ./resources/ts/views/admin/EmployeeAppend.vue?vue&type=template&id=05928bd1& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_EmployeeAppend_vue_vue_type_template_id_05928bd1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vuetify-loader/lib/loader.js!../../../../node_modules/vue-loader/lib??vue-loader-options!./EmployeeAppend.vue?vue&type=template&id=05928bd1& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib/index.js?!./resources/ts/views/admin/EmployeeAppend.vue?vue&type=template&id=05928bd1&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_EmployeeAppend_vue_vue_type_template_id_05928bd1___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_EmployeeAppend_vue_vue_type_template_id_05928bd1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -83801,6 +86790,103 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/ts/views/admin/SkillList.vue":
+/*!************************************************!*\
+  !*** ./resources/ts/views/admin/SkillList.vue ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SkillList_vue_vue_type_template_id_439aa594___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SkillList.vue?vue&type=template&id=439aa594& */ "./resources/ts/views/admin/SkillList.vue?vue&type=template&id=439aa594&");
+/* harmony import */ var _SkillList_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SkillList.vue?vue&type=script&lang=ts& */ "./resources/ts/views/admin/SkillList.vue?vue&type=script&lang=ts&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _SkillList_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _SkillList_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vuetify-loader/lib/runtime/installComponents.js */ "./node_modules/vuetify-loader/lib/runtime/installComponents.js");
+/* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VBtn */ "./node_modules/vuetify/lib/components/VBtn/index.js");
+/* harmony import */ var vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VCard */ "./node_modules/vuetify/lib/components/VCard/index.js");
+/* harmony import */ var vuetify_lib_components_VChip__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VChip */ "./node_modules/vuetify/lib/components/VChip/index.js");
+/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/index.js");
+/* harmony import */ var vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VDialog */ "./node_modules/vuetify/lib/components/VDialog/index.js");
+/* harmony import */ var vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VIcon */ "./node_modules/vuetify/lib/components/VIcon/index.js");
+/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SkillList_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SkillList_vue_vue_type_template_id_439aa594___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SkillList_vue_vue_type_template_id_439aa594___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* vuetify-loader */
+
+
+
+
+
+
+
+
+
+
+
+
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__["VBtn"],VCard: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCard"],VCardActions: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardActions"],VCardText: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardText"],VCardTitle: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_5__["VCardTitle"],VChip: vuetify_lib_components_VChip__WEBPACK_IMPORTED_MODULE_6__["VChip"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VContainer"],VDialog: vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_8__["VDialog"],VIcon: vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_9__["VIcon"],VSpacer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VSpacer"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__["VTextField"]})
+
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/ts/views/admin/SkillList.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/ts/views/admin/SkillList.vue?vue&type=script&lang=ts&":
+/*!*************************************************************************!*\
+  !*** ./resources/ts/views/admin/SkillList.vue?vue&type=script&lang=ts& ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_ts_loader_index_js_ref_5_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillList_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/ts-loader??ref--5!../../../../node_modules/vuetify-loader/lib/loader.js!../../../../node_modules/vue-loader/lib??vue-loader-options!./SkillList.vue?vue&type=script&lang=ts& */ "./node_modules/ts-loader/index.js?!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib/index.js?!./resources/ts/views/admin/SkillList.vue?vue&type=script&lang=ts&");
+/* harmony import */ var _node_modules_ts_loader_index_js_ref_5_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillList_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_ts_loader_index_js_ref_5_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillList_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_ts_loader_index_js_ref_5_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillList_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_ts_loader_index_js_ref_5_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillList_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_ts_loader_index_js_ref_5_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillList_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/ts/views/admin/SkillList.vue?vue&type=template&id=439aa594&":
+/*!*******************************************************************************!*\
+  !*** ./resources/ts/views/admin/SkillList.vue?vue&type=template&id=439aa594& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillList_vue_vue_type_template_id_439aa594___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vuetify-loader/lib/loader.js!../../../../node_modules/vue-loader/lib??vue-loader-options!./SkillList.vue?vue&type=template&id=439aa594& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vuetify-loader/lib/loader.js!./node_modules/vue-loader/lib/index.js?!./resources/ts/views/admin/SkillList.vue?vue&type=template&id=439aa594&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillList_vue_vue_type_template_id_439aa594___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_node_modules_vue_loader_lib_index_js_vue_loader_options_SkillList_vue_vue_type_template_id_439aa594___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/ts/views/admin/employeeProfile/index.vue":
 /*!************************************************************!*\
   !*** ./resources/ts/views/admin/employeeProfile/index.vue ***!
@@ -83820,8 +86906,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VBtn */ "./node_modules/vuetify/lib/components/VBtn/index.js");
 /* harmony import */ var vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VCard */ "./node_modules/vuetify/lib/components/VCard/index.js");
 /* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/index.js");
-/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
-/* harmony import */ var vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VTextarea */ "./node_modules/vuetify/lib/components/VTextarea/index.js");
+/* harmony import */ var vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VDialog */ "./node_modules/vuetify/lib/components/VDialog/index.js");
+/* harmony import */ var vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VIcon */ "./node_modules/vuetify/lib/components/VIcon/index.js");
+/* harmony import */ var vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuetify/lib/components/VList */ "./node_modules/vuetify/lib/components/VList/index.js");
+/* harmony import */ var vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vuetify/lib/components/VSelect */ "./node_modules/vuetify/lib/components/VSelect/index.js");
+/* harmony import */ var vuetify_lib_components_VSubheader__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vuetify/lib/components/VSubheader */ "./node_modules/vuetify/lib/components/VSubheader/index.js");
+/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
+/* harmony import */ var vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! vuetify/lib/components/VTextarea */ "./node_modules/vuetify/lib/components/VTextarea/index.js");
 
 
 
@@ -83849,7 +86940,17 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 
 
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VAvatar: vuetify_lib_components_VAvatar__WEBPACK_IMPORTED_MODULE_4__["VAvatar"],VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["VBtn"],VCardText: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_6__["VCardText"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VCol"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VContainer"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_8__["VTextField"],VTextarea: vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_9__["VTextarea"]})
+
+
+
+
+
+
+
+
+
+
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VAvatar: vuetify_lib_components_VAvatar__WEBPACK_IMPORTED_MODULE_4__["VAvatar"],VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_5__["VBtn"],VCard: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_6__["VCard"],VCardActions: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_6__["VCardActions"],VCardText: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_6__["VCardText"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VCol"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VContainer"],VDialog: vuetify_lib_components_VDialog__WEBPACK_IMPORTED_MODULE_8__["VDialog"],VIcon: vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_9__["VIcon"],VListItem: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_10__["VListItem"],VListItemGroup: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_10__["VListItemGroup"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VRow"],VSelect: vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_11__["VSelect"],VSpacer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VSpacer"],VSubheader: vuetify_lib_components_VSubheader__WEBPACK_IMPORTED_MODULE_12__["VSubheader"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_13__["VTextField"],VTextarea: vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_14__["VTextarea"]})
 
 
 /* hot reload */
@@ -83913,8 +87014,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuetify_lib_components_VDatePicker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VDatePicker */ "./node_modules/vuetify/lib/components/VDatePicker/index.js");
 /* harmony import */ var vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VForm */ "./node_modules/vuetify/lib/components/VForm/index.js");
 /* harmony import */ var vuetify_lib_components_VMenu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VMenu */ "./node_modules/vuetify/lib/components/VMenu/index.js");
-/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
-/* harmony import */ var vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuetify/lib/components/VTextarea */ "./node_modules/vuetify/lib/components/VTextarea/index.js");
+/* harmony import */ var vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VSelect */ "./node_modules/vuetify/lib/components/VSelect/index.js");
+/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
+/* harmony import */ var vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vuetify/lib/components/VTextarea */ "./node_modules/vuetify/lib/components/VTextarea/index.js");
 
 
 
@@ -83944,7 +87046,8 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 
 
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__["VBtn"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VCol"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VContainer"],VDatePicker: vuetify_lib_components_VDatePicker__WEBPACK_IMPORTED_MODULE_6__["VDatePicker"],VForm: vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_7__["VForm"],VMenu: vuetify_lib_components_VMenu__WEBPACK_IMPORTED_MODULE_8__["VMenu"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VRow"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_9__["VTextField"],VTextarea: vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_10__["VTextarea"]})
+
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__["VBtn"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VCol"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VContainer"],VDatePicker: vuetify_lib_components_VDatePicker__WEBPACK_IMPORTED_MODULE_6__["VDatePicker"],VForm: vuetify_lib_components_VForm__WEBPACK_IMPORTED_MODULE_7__["VForm"],VMenu: vuetify_lib_components_VMenu__WEBPACK_IMPORTED_MODULE_8__["VMenu"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VRow"],VSelect: vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_9__["VSelect"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_10__["VTextField"],VTextarea: vuetify_lib_components_VTextarea__WEBPACK_IMPORTED_MODULE_11__["VTextarea"]})
 
 
 /* hot reload */

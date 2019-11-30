@@ -23,7 +23,7 @@ class CreateFrameworkExperiencesTable extends Migration
             $table->unique(['employee_id', 'framework_id']);
 
             $table->foreign('employee_id')->references('id')->on('employees');
-            $table->foreign('framework_id')->references('id')->on('frameworks');
+            $table->foreign('framework_id')->references('id')->on('frameworks')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('experience_period_id')->references('id')->on('experience_periods');
         });
     }

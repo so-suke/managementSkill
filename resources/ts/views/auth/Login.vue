@@ -3,7 +3,7 @@
     <v-layout align-center justify-center>
       <v-flex xs12 sm8 md4>
         <v-card class="elevation-12">
-          <v-toolbar color="primary" dark flat>
+          <v-toolbar color="blue" dark flat>
             <v-toolbar-title>ログインフォーム</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
@@ -28,7 +28,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="primary" @click="login">ログイン</v-btn>
+            <v-btn color="blue" dark @click="login">ログイン</v-btn>
           </v-card-actions>
         </v-card>
         <div class="text-center mt-4">
@@ -43,6 +43,7 @@
 <script lang="ts">
 import { Component, Prop, Emit, Vue, Watch } from "vue-property-decorator";
 import { AppModule } from "@modules/app";
+import { DrawerLinksModule } from "@modules/drawerLinks";
 
 @Component({})
 export default class Login extends Vue {
@@ -66,7 +67,10 @@ export default class Login extends Vue {
         window.axios.post("/api/me").then(res => {
           this.$store.commit("authenticationModule/setIsLogin", true);
           this.$store.commit("authenticationModule/setUser", res.data);
-          this.$router.push({ name: "Admin Wrapper" });
+          this.$router.push({
+            name: "Employee Profile",
+            params: { id: this.$store.state.authenticationModule.user.id }
+          });
           AppModule.setIsShowSnackbar(true);
         });
       })

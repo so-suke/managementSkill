@@ -64,4 +64,19 @@ class Employee extends Authenticatable implements JWTSubject
     {
         return $this->belongsTo('App\JobTitle');
     }
+
+    public function languageExperiences()
+    {
+        return $this->hasMany('App\LanguageExperience');
+    }
+
+    public function frameworkExperiences()
+    {
+        return $this->hasMany('App\FrameworkExperience');
+    }
+
+    public function otherToolExperiences()
+    {
+        return $this->hasMany('App\OtherToolExperience');
+    }
 }

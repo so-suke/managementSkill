@@ -21,18 +21,18 @@ $last_names = [
 ];
 
 $first_names = [
-    ['chinese' => '実', 'kana' => 'ミノル', 'gender' => 'male'],
-    ['chinese' => '真一', 'kana' => 'シンイチ', 'gender' => 'male'],
-    ['chinese' => '浩二', 'kana' => 'コウジ', 'gender' => 'male'],
-    ['chinese' => '学', 'kana' => 'マナブ', 'gender' => 'male'],
-    ['chinese' => '浩之', 'kana' => 'ヒロユキ', 'gender' => 'male'],
-    ['chinese' => '久美子', 'kana' => 'クミコ', 'gender' => 'female'],
-    ['chinese' => '啓子', 'kana' => 'ケイコ', 'gender' => 'female'],
-    ['chinese' => '恵美子', 'kana' => 'エミコ', 'gender' => 'female'],
-    ['chinese' => '絵美', 'kana' => 'エミ', 'gender' => 'female'],
-    ['chinese' => '悦子', 'kana' => 'エツコ', 'gender' => 'female'],
-    ['chinese' => '節子', 'kana' => 'セツコ', 'gender' => 'female'],
-    ['chinese' => '美加子', 'kana' => 'ミカコ', 'gender' => 'female'],
+    ['chinese' => '実', 'kana' => 'ミノル', 'gender' => 'male', 'image' => 'male_0.png'],
+    ['chinese' => '真一', 'kana' => 'シンイチ', 'gender' => 'male', 'image' => 'male_1.png'],
+    ['chinese' => '浩二', 'kana' => 'コウジ', 'gender' => 'male', 'image' => 'male_2.png'],
+    ['chinese' => '学', 'kana' => 'マナブ', 'gender' => 'male', 'image' => 'male_3.png'],
+    ['chinese' => '浩之', 'kana' => 'ヒロユキ', 'gender' => 'male', 'image' => 'male_4.png'],
+    ['chinese' => '久美子', 'kana' => 'クミコ', 'gender' => 'female', 'image' => 'female_0.png'],
+    ['chinese' => '啓子', 'kana' => 'ケイコ', 'gender' => 'female', 'image' => 'female_1.png'],
+    ['chinese' => '恵美子', 'kana' => 'エミコ', 'gender' => 'female', 'image' => 'female_2.png'],
+    ['chinese' => '絵美', 'kana' => 'エミ', 'gender' => 'female', 'image' => 'female_3.png'],
+    ['chinese' => '悦子', 'kana' => 'エツコ', 'gender' => 'female', 'image' => 'female_4.png'],
+    ['chinese' => '節子', 'kana' => 'セツコ', 'gender' => 'female', 'image' => 'female_5.png'],
+    ['chinese' => '美加子', 'kana' => 'ミカコ', 'gender' => 'female', 'image' => 'female_6.png'],
 ];
 
 $factory->define(Employee::class, function (Faker $faker) use ($jobTitles, $last_names, $first_names) {
@@ -41,13 +41,13 @@ $factory->define(Employee::class, function (Faker $faker) use ($jobTitles, $last
     $first_name = $first_names[array_rand($first_names)];
 
     return [
-        'is_admin' => false,
+        'is_admin' => rand(0, 1),
         'job_title_id' => $jobTitle->id,
         'last_name' => $last_name['chinese'],
         'first_name' => $first_name['chinese'],
         'last_name_kana' => $last_name['kana'],
         'first_name_kana' => $first_name['kana'],
-        'profile_image_path' => 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
+        'profile_image_path' => '/images/' . $first_name['image'],
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         // 'password' => bcrypt($faker->password(6, 10)),

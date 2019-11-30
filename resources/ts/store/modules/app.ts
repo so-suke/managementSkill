@@ -4,6 +4,7 @@ import store from '../index';
 @Module({ dynamic: true, store, name: 'app', namespaced: true })
 class App extends VuexModule {
   public drawer: boolean = true;
+  public drawerLinks: any = [];
   public color: string = 'success';
   public image: string = 'https://demos.creative-tim.com/vue-material-dashboard/img/sidebar-2.32103624.jpg';
   public isShowSnackbar: boolean = false;
@@ -11,6 +12,10 @@ class App extends VuexModule {
   @Mutation
   public setDrawer(drawer: boolean) {
     this.drawer = drawer;
+  }
+  @Mutation
+  public setDrawerLinks(drawerLinks: any) {
+    this.drawerLinks = drawerLinks;
   }
   @Mutation
   public setColor(color: string) {

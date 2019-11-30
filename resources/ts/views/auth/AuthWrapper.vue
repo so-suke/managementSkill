@@ -12,5 +12,9 @@
 import { Component, Prop, Emit, Vue, Watch } from "vue-property-decorator";
 
 @Component({})
-export default class AuthWrapper extends Vue {}
+export default class AuthWrapper extends Vue {
+  private mounted(): void {
+    // this.fetchData();
+  }
+}
 </script>

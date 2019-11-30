@@ -2638,6 +2638,10 @@ select {
   background: #fff;
 }
 
+.noTouch {
+  pointer-events: none;
+}
+
 .myNotifications {
   padding: 10px;
   margin: 0 5px 5px;

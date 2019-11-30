@@ -7,6 +7,8 @@
         >
           <material-card class="v-card-profile shaped">
             <v-avatar slot="offset" class="mx-auto d-block elevation-6" size="150">
+              <!-- <img src="/images/male_0.png" /> -->
+              <!-- <img :src="'/images/' + employee.profile_image_path" /> -->
               <img :src="employee.profile_image_path" />
             </v-avatar>
             <v-card-text class="text-center">
