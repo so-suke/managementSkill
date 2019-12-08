@@ -117,6 +117,10 @@ export default class SkillList extends Vue {
     ];
   }
 
+  mounted() {
+    this.initSkills();
+  }
+
   initSkills() {
     window.axios
       .get(`/api/getSkills`)
