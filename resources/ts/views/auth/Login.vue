@@ -71,6 +71,7 @@ export default class Login extends Vue {
             name: "Employee Profile",
             params: { id: this.$store.state.authenticationModule.user.id }
           });
+          // ログイン成功メッセージ表示
           AppModule.setIsShowSnackbar(true);
         });
       })
