@@ -45,7 +45,7 @@
     <v-col cols="12">
       <material-card class="v-card-profile">
         <v-avatar slot="offset" class="mx-auto d-block elevation-6" size="200">
-          <img src="https://cdn.vuetifyjs.com/images/cards/halcyon.png" />
+          <img :src="this.$store.state.authenticationModule.user.profile_image_path" alt />
         </v-avatar>
         <v-card-text>
           <v-text-field

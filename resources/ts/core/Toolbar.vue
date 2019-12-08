@@ -15,7 +15,6 @@
         <router-link v-ripple class="toolbar-items" :to="{ name: 'Your Profile'}">
           <v-avatar size="50px">
             <img :src="this.$store.state.authenticationModule.user.profile_image_path" alt />
-            <!-- <img src="https://cdn.vuetifyjs.com/images/cards/halcyon.png" alt /> -->
           </v-avatar>
         </router-link>
       </v-flex>
