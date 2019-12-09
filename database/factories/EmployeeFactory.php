@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model;
 use App\Employee;
 use App\JobTitle;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 $jobTitles = JobTitle::get();
 
@@ -50,7 +50,6 @@ $factory->define(Employee::class, function (Faker $faker) use ($jobTitles, $last
         'profile_image_path' => '/images/' . $first_name['image'],
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
-        // 'password' => bcrypt($faker->password(6, 10)),
         'password' => bcrypt('password'),
         'gender' => $first_name['gender'],
         'hired_at' => $faker->dateTimeBetween('-3 years', 'now')->format("Y-m-d"),
