@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <v-snackbar v-model="snackbar" top>
-      hello
+      <span>こんちには！{{ this.fullName }}さん</span>
       <v-btn color="pink" text @click="snackbar = false">Close</v-btn>
     </v-snackbar>
     <core-view />
@@ -18,15 +18,20 @@ import { AppModule } from "@modules/app";
   }
 })
 export default class App extends Vue {
-  // private snackbar: boolean = AppModule.isShowSnackbar;
   private mounted(): void {
     this.fetchData();
   }
+
+  get fullName() {
+    return (
+      `${this.$store.state.authenticationModule.user.last_name} ${this.$store.state.authenticationModule.user.first_name}`
+    );
+  }
+
   get snackbar() {
     return AppModule.isShowSnackbar;
   }
   set snackbar(snackbar: boolean) {
-    console.log(snackbar);
     AppModule.setIsShowSnackbar(snackbar);
   }
   private fetchData() {
