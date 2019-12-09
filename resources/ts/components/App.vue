@@ -18,14 +18,10 @@ import { AppModule } from "@modules/app";
   }
 })
 export default class App extends Vue {
-  private mounted(): void {
-    this.fetchData();
-  }
-
   get fullName() {
-    return (
-      `${this.$store.state.authenticationModule.user.last_name} ${this.$store.state.authenticationModule.user.first_name}`
-    );
+    return `${this.$store.state.authenticationModule.user.last_name} ${
+      this.$store.state.authenticationModule.user.first_name
+    }`;
   }
 
   get snackbar() {
@@ -33,16 +29,6 @@ export default class App extends Vue {
   }
   set snackbar(snackbar: boolean) {
     AppModule.setIsShowSnackbar(snackbar);
-  }
-  private fetchData() {
-    // window.axios
-    //   .get(`/api/employees`)
-    //   .then(res => {
-    //     console.log(res.data);
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   });
   }
 }
 </script>
