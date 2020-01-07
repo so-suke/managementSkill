@@ -80,55 +80,61 @@
     <v-col cols="12">
       <material-card color="green" title="スキル一覧">
         <v-card-text>
-          <material-card>
+          <material-card
+            v-for="(skill_mode, skill_mode_name) in SELECTED_SKILL_MODE"
+            v-bind:key="skill_mode_name"
+          >
             <div class="d-flex align-center">
-              <v-subheader class="title">言語</v-subheader>
+              <v-subheader class="title">{{ skill_mode.jpName }}</v-subheader>
               <v-btn
                 text
                 icon
                 color="deep-orange"
-                @click="showCreateExperienceDialog(SELECTED_SKILL_MODE.language)"
+                @click="showCreateExperienceDialog(SELECTED_SKILL_MODE[skill_mode_name])"
               >
                 <v-icon>mdi-folder-plus</v-icon>
               </v-btn>
             </div>
             <v-list-item-group readonly>
-              <v-list-item v-for="(experience, i) in employee.language_experiences" :key="i">
+              <v-list-item
+                v-for="(experience, i) in employee[skill_mode.sql + '_experiences']"
+                :key="i"
+              >
                 <v-row align="center" justify="start">
                   <v-col cols="2">
-                    <p class="mb-0">{{ experience.language.name }}</p>
+                    <p class="mb-0">{{ experience[skill_mode.sql].name }}</p>
                   </v-col>
                   <v-col class="d-flex">
                     <input
                       class="noTouch"
                       type="radio"
-                      :name="`languageExperience${i}`"
+                      :name="`${skill_mode.routing}Experience${i}`"
                       value="半年未満"
                       :checked="experience.experience_period_id === 1"
                     />半年未満
                     <input
                       class="noTouch"
                       type="radio"
-                      :name="`languageExperience${i}`"
+                      :name="`${skill_mode.routing}Experience${i}`"
                       value="半年から1年"
                       :checked="experience.experience_period_id === 2"
                     />半年から1年
                     <input
                       class="noTouch"
                       type="radio"
-                      :name="`languageExperience${i}`"
+                      :name="`${skill_mode.routing}Experience${i}`"
                       value="1年から2年"
                       :checked="experience.experience_period_id === 3"
                     />1年から2年
                     <input
                       type="radio"
-                      :name="`languageExperience${i}`"
+                      :name="`${skill_mode.routing}Experience${i}`"
                       value="2年から3年"
                       :checked="experience.experience_period_id === 4"
                     />2年から3年
                     <input
                       type="radio"
-                      :name="`languageExperience${i}`"
+                      :name="`${skill_mode.routing}Experience${i}`"
                       value="3年以上"
                       :checked="experience.experience_period_id === 5"
                     />3年以上
@@ -138,7 +144,7 @@
                       text
                       icon
                       color="deep-orange"
-                      @click="showUpdateExperiencePeriodDialog(experience.id, SELECTED_SKILL_MODE.language)"
+                      @click="showUpdateExperiencePeriodDialog(experience.id, SELECTED_SKILL_MODE[skill_mode_name])"
                     >
                       <v-icon>mdi-calendar</v-icon>
                     </v-btn>
@@ -146,159 +152,7 @@
                       text
                       icon
                       color="deep-orange"
-                      @click="showDeleteExperienceDialog(experience.id, SELECTED_SKILL_MODE.language)"
-                    >
-                      <v-icon>mdi-delete</v-icon>
-                    </v-btn>
-                  </v-col>
-                </v-row>
-              </v-list-item>
-            </v-list-item-group>
-          </material-card>
-
-          <material-card>
-            <div class="d-flex align-center">
-              <v-subheader class="title">フレームワーク</v-subheader>
-              <v-btn
-                text
-                icon
-                color="deep-orange"
-                @click="showCreateExperienceDialog(SELECTED_SKILL_MODE.framework)"
-              >
-                <v-icon>mdi-folder-plus</v-icon>
-              </v-btn>
-            </div>
-            <v-list-item-group readonly>
-              <v-list-item v-for="(experience, i) in employee.framework_experiences" :key="i">
-                <v-row align="center" justify="start">
-                  <v-col cols="2">
-                    <p class="mb-0">{{ experience.framework.name }}</p>
-                  </v-col>
-                  <v-col class="d-flex">
-                    <input
-                      class="noTouch"
-                      type="radio"
-                      :name="`frameworkExperience${i}`"
-                      value="半年未満"
-                      :checked="experience.experience_period_id === 1"
-                    />半年未満
-                    <input
-                      class="noTouch"
-                      type="radio"
-                      :name="`frameworkExperience${i}`"
-                      value="半年から1年"
-                      :checked="experience.experience_period_id === 2"
-                    />半年から1年
-                    <input
-                      class="noTouch"
-                      type="radio"
-                      :name="`frameworkExperience${i}`"
-                      value="1年から2年"
-                      :checked="experience.experience_period_id === 3"
-                    />1年から2年
-                    <input
-                      type="radio"
-                      :name="`frameworkExperience${i}`"
-                      value="2年から3年"
-                      :checked="experience.experience_period_id === 4"
-                    />2年から3年
-                    <input
-                      type="radio"
-                      :name="`frameworkExperience${i}`"
-                      value="3年以上"
-                      :checked="experience.experience_period_id === 5"
-                    />3年以上
-                  </v-col>
-                  <v-col class="d-flex" cols="1">
-                    <v-btn
-                      text
-                      icon
-                      color="deep-orange"
-                      @click="showUpdateExperiencePeriodDialog(experience.id, SELECTED_SKILL_MODE.framework)"
-                    >
-                      <v-icon>mdi-calendar</v-icon>
-                    </v-btn>
-                    <v-btn
-                      text
-                      icon
-                      color="deep-orange"
-                      @click="showDeleteExperienceDialog(experience.id, SELECTED_SKILL_MODE.framework)"
-                    >
-                      <v-icon>mdi-delete</v-icon>
-                    </v-btn>
-                  </v-col>
-                </v-row>
-              </v-list-item>
-            </v-list-item-group>
-          </material-card>
-
-          <material-card>
-            <div class="d-flex align-center">
-              <v-subheader class="title">その他ツール</v-subheader>
-              <v-btn
-                text
-                icon
-                color="deep-orange"
-                @click="showCreateExperienceDialog(SELECTED_SKILL_MODE.otherTool)"
-              >
-                <v-icon>mdi-folder-plus</v-icon>
-              </v-btn>
-            </div>
-            <v-list-item-group readonly>
-              <v-list-item v-for="(experience, i) in employee.other_tool_experiences" :key="i">
-                <v-row align="center" justify="start">
-                  <v-col cols="2">
-                    <p class="mb-0">{{ experience.other_tool.name }}</p>
-                  </v-col>
-                  <v-col class="d-flex">
-                    <input
-                      class="noTouch"
-                      type="radio"
-                      :name="`otherToolExperience${i}`"
-                      value="半年未満"
-                      :checked="experience.experience_period_id === 1"
-                    />半年未満
-                    <input
-                      class="noTouch"
-                      type="radio"
-                      :name="`otherToolExperience${i}`"
-                      value="半年から1年"
-                      :checked="experience.experience_period_id === 2"
-                    />半年から1年
-                    <input
-                      class="noTouch"
-                      type="radio"
-                      :name="`otherToolExperience${i}`"
-                      value="1年から2年"
-                      :checked="experience.experience_period_id === 3"
-                    />1年から2年
-                    <input
-                      type="radio"
-                      :name="`otherToolExperience${i}`"
-                      value="2年から3年"
-                      :checked="experience.experience_period_id === 4"
-                    />2年から3年
-                    <input
-                      type="radio"
-                      :name="`otherToolExperience${i}`"
-                      value="3年以上"
-                      :checked="experience.experience_period_id === 5"
-                    />3年以上
-                  </v-col>
-                  <v-col class="d-flex" cols="1">
-                    <v-btn
-                      text
-                      icon
-                      color="deep-orange"
-                      @click="showUpdateExperiencePeriodDialog(experience.id, SELECTED_SKILL_MODE.otherTool)"
-                    >
-                      <v-icon>mdi-calendar</v-icon>
-                    </v-btn>
-                    <v-btn
-                      text
-                      icon
-                      color="deep-orange"
-                      @click="showDeleteExperienceDialog(experience.id, SELECTED_SKILL_MODE.otherTool)"
+                      @click="showDeleteExperienceDialog(experience.id, SELECTED_SKILL_MODE[skill_mode_name])"
                     >
                       <v-icon>mdi-delete</v-icon>
                     </v-btn>
@@ -325,17 +179,20 @@ export default class YourProfile extends Vue {
   };
 
   private SELECTED_SKILL_MODE: {
-    [skillMode: string]: { sql: string; routing: string };
+    [skillMode: string]: { jpName: string; sql: string; routing: string };
   } = {
     language: {
+      jpName: "言語",
       sql: "language",
       routing: "language"
     },
     framework: {
+      jpName: "フレームワーク",
       sql: "framework",
       routing: "framework"
     },
     otherTool: {
+      jpName: "その他ツール",
       sql: "other_tool",
       routing: "otherTool"
     }
@@ -356,13 +213,10 @@ export default class YourProfile extends Vue {
   willDeleteExperienceId: number = -1;
   experiencePeriodId: string = "-1";
 
-  mounted() {
-    // console.log(this.$store.state.authenticationModule.user);
-  }
-
   initEmployee(id: string) {
     window.axios.get(`/api/employees/${id}`).then(res => {
       this.employee = res.data;
+      console.log(this.employee);
     });
   }
 
@@ -418,12 +272,15 @@ export default class YourProfile extends Vue {
   showCreateExperienceDialog(skillMode: any) {
     // this.willUpdateExperienceId = experienceId;
     this.selectedSkillMode = skillMode;
+    // もし「選択スキルモード」が「言語」の場合、
     if (this.selectedSkillMode === this.SELECTED_SKILL_MODE.language) {
+      // 社員の言語経験配列からid配列を取得。
       const languageIds = this.employee.language_experiences.map(
         (experience: any) => {
           return experience.language_id;
         }
       );
+      // 未経験言語を取得。
       this.experienceSkills = SkillModule.languages.filter(item => {
         if (languageIds.includes(item.id) !== true) {
           return item;
