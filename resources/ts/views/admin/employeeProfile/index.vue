@@ -174,12 +174,18 @@ import { SkillModule } from "@modules/skill";
 
 @Component({})
 export default class YourProfile extends Vue {
+  // 社員情報の格納用変数。社員情報は、「ページ読み込み時」にDBより取得。
   private employee: any = {
     job_title: {}
   };
 
+  //
   private SELECTED_SKILL_MODE: {
-    [skillMode: string]: { jpName: string; sql: string; routing: string };
+    [skillMode: string]: {
+      jpName: string;
+      sql: string;
+      routing: string;
+    };
   } = {
     language: {
       jpName: "言語",
@@ -213,6 +219,7 @@ export default class YourProfile extends Vue {
   willDeleteExperienceId: number = -1;
   experiencePeriodId: string = "-1";
 
+  // ページ読み込み時に「社員情報」をDBより取得
   initEmployee(id: string) {
     window.axios.get(`/api/employees/${id}`).then(res => {
       this.employee = res.data;
@@ -239,9 +246,7 @@ export default class YourProfile extends Vue {
     params.append("experience_period_id", this.experiencePeriodId);
     window.axios
       .put(
-        `api/${this.selectedSkillMode.routing}Experiences/${
-          this.willUpdateExperienceId
-        }`,
+        `api/${this.selectedSkillMode.routing}Experiences/${this.willUpdateExperienceId}`,
         params
       )
       .then(res => {
@@ -259,9 +264,7 @@ export default class YourProfile extends Vue {
   deleteExperience() {
     window.axios
       .delete(
-        `api/${this.selectedSkillMode.routing}Experiences/${
-          this.willDeleteExperienceId
-        }`
+        `api/${this.selectedSkillMode.routing}Experiences/${this.willDeleteExperienceId}`
       )
       .then(res => {
         this.initEmployee(this.$route.params.id);
@@ -269,50 +272,25 @@ export default class YourProfile extends Vue {
       });
   }
 
+  // スキル経験データの新規作成ダイアログを表示する。
+  // スキルの種類により処理を分ける。
   showCreateExperienceDialog(skillMode: any) {
-    // this.willUpdateExperienceId = experienceId;
     this.selectedSkillMode = skillMode;
-    // もし「選択スキルモード」が「言語」の場合、
-    if (this.selectedSkillMode === this.SELECTED_SKILL_MODE.language) {
-      // 社員の言語経験配列からid配列を取得。
-      const languageIds = this.employee.language_experiences.map(
-        (experience: any) => {
-          return experience.language_id;
-        }
-      );
-      // 未経験言語を取得。
-      this.experienceSkills = SkillModule.languages.filter(item => {
-        if (languageIds.includes(item.id) !== true) {
-          return item;
-        }
-      });
-    } else if (this.selectedSkillMode === this.SELECTED_SKILL_MODE.framework) {
-      // this.experienceSkills = SkillModule.frameworks;
-      const frameworkIds = this.employee.framework_experiences.map(
-        (experience: any) => {
-          return experience.framework_id;
-        }
-      );
-      this.experienceSkills = SkillModule.frameworks.filter(item => {
-        if (frameworkIds.includes(item.id) !== true) {
-          return item;
-        }
-      });
-    } else if (this.selectedSkillMode === this.SELECTED_SKILL_MODE.otherTool) {
-      // this.experienceSkills = SkillModule.otherTools;
-      const otherToolIds = this.employee.other_tool_experiences.map(
-        (experience: any) => {
-          return experience.other_tool_id;
-        }
-      );
-      this.experienceSkills = SkillModule.otherTools.filter(item => {
-        if (otherToolIds.includes(item.id) !== true) {
-          return item;
-        }
-      });
-    } else {
-      this.experienceSkills = SkillModule.languages;
-    }
+
+    const skillIds = this.employee[skillMode.sql + "_experiences"].map(
+      (experience: any) => {
+        return experience[skillMode.sql + "_id"];
+      }
+    );
+
+    const skills = SkillModule.skillByKind(skillMode.routing);
+    this.experienceSkills = skills.filter((skill: any) => {
+      if (skillIds.includes(skill.id) !== true) {
+        return skill;
+      }
+    });
+
+    // ダイアログを表示するため、trueにする。
     this.createExperienceDialog = true;
   }
 

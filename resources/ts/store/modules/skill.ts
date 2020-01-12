@@ -24,6 +24,20 @@ class Skill extends VuexModule {
   public setOtherTools(otherTools: any[]) {
     this.otherTools = otherTools;
   }
+
+  get skillByKind() {
+    return (skillKind: string) => {
+      if (skillKind === 'language') {
+        return this.languages;
+      } else if(skillKind === 'framework') {
+        return this.frameworks;
+      } else if(skillKind === 'otherTool') {
+        return this.otherTools;
+      } else {
+        return this.languages;
+      }
+    }
+  }
 }
 
 export const SkillModule = getModule(Skill);
