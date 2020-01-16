@@ -179,7 +179,7 @@ export default class YourProfile extends Vue {
     job_title: {}
   };
 
-  //
+  // スキルの種類により処理(スキル新規作成など)やPHPへのルーティングを分けるためのもの。
   private SELECTED_SKILL_MODE: {
     [skillMode: string]: {
       jpName: string;
