@@ -105,39 +105,20 @@
                     <p class="mb-0">{{ experience[skill_mode.sql].name }}</p>
                   </v-col>
                   <v-col class="d-flex">
-                    <input
-                      class="noTouch"
-                      type="radio"
-                      :name="`${skill_mode.routing}Experience${i}`"
-                      value="半年未満"
-                      :checked="experience.experience_period_id === 1"
-                    />半年未満
-                    <input
-                      class="noTouch"
-                      type="radio"
-                      :name="`${skill_mode.routing}Experience${i}`"
-                      value="半年から1年"
-                      :checked="experience.experience_period_id === 2"
-                    />半年から1年
-                    <input
-                      class="noTouch"
-                      type="radio"
-                      :name="`${skill_mode.routing}Experience${i}`"
-                      value="1年から2年"
-                      :checked="experience.experience_period_id === 3"
-                    />1年から2年
-                    <input
-                      type="radio"
-                      :name="`${skill_mode.routing}Experience${i}`"
-                      value="2年から3年"
-                      :checked="experience.experience_period_id === 4"
-                    />2年から3年
-                    <input
-                      type="radio"
-                      :name="`${skill_mode.routing}Experience${i}`"
-                      value="3年以上"
-                      :checked="experience.experience_period_id === 5"
-                    />3年以上
+                    <div
+                      class="d-flex align-center"
+                      v-for="experiencePeriod in experiencePeriods"
+                      v-bind:key="experiencePeriod.id"
+                    >
+                      <input
+                        class="noTouch"
+                        type="radio"
+                        :name="`${skill_mode.routing}Experience${i}`"
+                        :value="experiencePeriod.name"
+                        :checked="experience.experience_period_id === experiencePeriod.id"
+                      />
+                      <span>{{ experiencePeriod.name }}</span>
+                    </div>
                   </v-col>
                   <v-col class="d-flex" cols="1">
                     <v-btn
@@ -223,7 +204,6 @@ export default class YourProfile extends Vue {
   initEmployee(id: string) {
     window.axios.get(`/api/employees/${id}`).then(res => {
       this.employee = res.data;
-      console.log(this.employee);
     });
   }
 
