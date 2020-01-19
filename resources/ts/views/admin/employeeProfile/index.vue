@@ -110,13 +110,11 @@
                       v-for="experiencePeriod in experiencePeriods"
                       v-bind:key="experiencePeriod.id"
                     >
-                      <input
-                        class="noTouch"
-                        type="radio"
-                        :name="`${skill_mode.routing}Experience${i}`"
-                        :value="experiencePeriod.name"
-                        :checked="experience.experience_period_id === experiencePeriod.id"
-                      />
+                      <v-icon
+                        v-if="experience.experience_period_id === experiencePeriod.id"
+                        class="accent"
+                      >mdi-checkbox-marked-outline</v-icon>
+                      <v-icon v-else class="accent">mdi-checkbox-blank-outline</v-icon>
                       <span>{{ experiencePeriod.name }}</span>
                     </div>
                   </v-col>
@@ -311,3 +309,11 @@ export default class YourProfile extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "~@sass/variables/_variables.scss";
+
+.accent {
+  color: $colorBlueAccent;
+}
+</style>
