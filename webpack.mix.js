@@ -9,7 +9,7 @@ mix.ts('resources/ts/app.ts', 'public/js')
   .webpackConfig({
     resolve: {
       alias: {
-        '@': path.resolve('resources/sass'),
+        '@sass': path.resolve('resources/sass'),
         '@src': path.resolve(__dirname, srcPath),
         '@store': path.resolve(__dirname, srcPath + 'store/'),
         '@views': path.resolve(__dirname, srcPath + 'views/'),
