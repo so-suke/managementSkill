@@ -63,7 +63,7 @@ export default class ExampleComponent extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import "~@/variables/_variables.scss";
+@import "~@sass/variables/_variables.scss";
 
 .svg-inline--fa {
   width: 24px;
