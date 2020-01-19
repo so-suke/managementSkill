@@ -106,15 +106,16 @@
                   </v-col>
                   <v-col class="d-flex">
                     <div
-                      class="d-flex align-center"
+                      class="d-flex align-center space"
                       v-for="experiencePeriod in experiencePeriods"
                       v-bind:key="experiencePeriod.id"
                     >
                       <v-icon
                         v-if="experience.experience_period_id === experiencePeriod.id"
-                        class="accent"
+                        class="accent mdi-36px"
                       >mdi-checkbox-marked-outline</v-icon>
                       <v-icon v-else class="accent">mdi-checkbox-blank-outline</v-icon>
+
                       <span>{{ experiencePeriod.name }}</span>
                     </div>
                   </v-col>
@@ -315,5 +316,9 @@ export default class YourProfile extends Vue {
 
 .accent {
   color: $colorBlueAccent;
+}
+
+.space:not(:last-child) {
+  margin-right: 8px;
 }
 </style>
